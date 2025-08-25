@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f6f5f1;
+  --foreground: #1e1e1e;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--foreground);
+  --color-light: var(--background);
+  --font-archivo-black: "Archivo Black", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-section {
+  background-color: #f6f5f1;
+  background-image: linear-gradient(#ececec 1px, transparent 1px),
+    linear-gradient(to right, #ececec 1px, #f6f5f1 1px);
+  background-size: 30px 30px;
 }
