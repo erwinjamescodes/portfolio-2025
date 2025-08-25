@@ -5,19 +5,19 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "CLOUDPEDIA",
+      title: "Claudipedia",
       description:
         "Lorem ipsum dolor sit amet consectetur. Enim sit ullamcorper tellus diam facilisi blandit eros sagittis diam. Lorem ipsum dolor sit amet consectetur. Enim sit ullamcorper tellus diam facilisi blandit eros sagittis diam.",
       tags: ["nextjs", "n8n", "supabase"],
-      viewMore: "VIEW MORE",
+      image: "/assets/placeholder-project.jpeg",
     },
     {
       id: 2,
-      title: "CLOUDPEDIA",
+      title: "Automated Email Response",
       description:
         "Lorem ipsum dolor sit amet consectetur. Enim sit ullamcorper tellus diam facilisi blandit eros sagittis diam. Lorem ipsum dolor sit amet consectetur. Enim sit ullamcorper tellus diam facilisi blandit eros sagittis diam.",
       tags: ["HTML", "CSS", "Javascript"],
-      viewMore: "VIEW MORE",
+      image: "/assets/placeholder-project-2.jpg",
     },
   ];
 
@@ -35,7 +35,7 @@ const Projects = () => {
                 {/* Image */}
                 <div className="w-full h-80 relative">
                   <Image
-                    src="/assets/placeholder-project.jpeg"
+                    src={project.image}
                     alt={project.title}
                     width={1080}
                     height={160}
@@ -45,7 +45,7 @@ const Projects = () => {
                     {project.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="px-2 py-1 text-primary text-sm  bg-light font-archivo-black lowercase"
+                        className="px-2 py-1 text-light text-sm  bg-primary font-archivo-black lowercase"
                       >
                         {tag}
                       </span>
@@ -53,15 +53,10 @@ const Projects = () => {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <p className="text-lg">
-                    Lorem ipsum dolor sit amet consectetur. Enim sit ullamcorper
-                    tellus diam facilisi blandit eros sagittis diam. Lorem ipsum
-                    dolor sit amet consectetur. Enim sit ullamcorper tellus diam
-                    facilisi blandit eros sagittis diam.
-                  </p>
+                  <p className="text-lg">{project.description}</p>
                   <div className="flex justify-between py-2 mt-6 border-t-2 border-b-2">
                     <h3 className="font-archivo-black uppercase text-lg">
-                      Claudipedia
+                      {project.title}
                     </h3>
                     <button className="font-archivo-black text-xs">
                       read more

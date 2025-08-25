@@ -4,6 +4,9 @@ import Marquee from "./components/Marquee";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import About from "./components/About";
+import FAQ from "./components/FAQ";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -20,6 +23,11 @@ export default function Home() {
         <Projects />
       </div>
       <About />
+      <div className="px-8  max-w-7xl mx-auto ">
+        <FAQ />
+        <Contact />
+      </div>
+      <Footer />
     </div>
   );
 }
