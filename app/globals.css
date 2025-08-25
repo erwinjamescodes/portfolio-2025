@@ -24,3 +24,16 @@ body {
     linear-gradient(to right, #ececec 1px, #f6f5f1 1px);
   background-size: 30px 30px;
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 45s linear infinite;
+}
