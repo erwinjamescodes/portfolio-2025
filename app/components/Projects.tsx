@@ -1,8 +1,8 @@
-'use client';
+"use client";
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,7 +32,8 @@ const Projects = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(titleRef.current,
+      gsap.fromTo(
+        titleRef.current,
         { y: 50, opacity: 0 },
         {
           y: 0,
@@ -42,13 +43,14 @@ const Projects = () => {
           scrollTrigger: {
             trigger: titleRef.current,
             start: "top 85%",
-          }
+          },
         }
       );
 
       projectRefs.current.forEach((ref, index) => {
         if (ref) {
-          gsap.fromTo(ref,
+          gsap.fromTo(
+            ref,
             { y: 100, opacity: 0 },
             {
               y: 0,
@@ -59,7 +61,7 @@ const Projects = () => {
               scrollTrigger: {
                 trigger: ref,
                 start: "top 80%",
-              }
+              },
             }
           );
         }
@@ -72,13 +74,21 @@ const Projects = () => {
   return (
     <section ref={projectsRef} className="w-full mt-16">
       <div>
-        <h2 ref={titleRef} className="text-primary text-4xl font-archivo-black mb-16">
+        <h2
+          ref={titleRef}
+          className="text-primary text-4xl font-archivo-black mb-16"
+        >
           Featured Projects
         </h2>
 
         <div className="space-y-12">
           {projects.map((project, index) => (
-            <div key={project.id} ref={el => { projectRefs.current[index] = el; }}>
+            <div
+              key={project.id}
+              ref={(el) => {
+                projectRefs.current[index] = el;
+              }}
+            >
               <div className="flex flex-col">
                 <div className="w-full h-80 relative">
                   <Image
@@ -101,11 +111,11 @@ const Projects = () => {
                 </div>
                 <div className="mt-4">
                   <p className="text-lg">{project.description}</p>
-                  <div className="flex justify-between py-2 mt-6 border-t-2 border-b-2">
+                  <div className="flex justify-between items-center py-2 mt-6 border-t-2 border-b-2">
                     <h3 className="font-archivo-black uppercase text-lg">
                       {project.title}
                     </h3>
-                    <button className="font-archivo-black text-xs">
+                    <button className="font-archivo-black text-sm cursor-pointer ">
                       read more
                     </button>
                   </div>

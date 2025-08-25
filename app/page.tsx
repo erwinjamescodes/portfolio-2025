@@ -11,21 +11,29 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <div className="flex flex-col mx-auto ">
-      <div className="hero-section px-8">
+      <Nav />
+      <div id="hero" className="hero-section px-8 pt-[100px]">
         <div className="max-w-7xl mx-auto">
-          <Nav />
           <Hero />
         </div>
       </div>
       <Marquee />
       <div className="px-8  max-w-7xl mx-auto ">
-        <Skills />
-        <Projects />
+        <div id="skills">
+          <Skills />
+        </div>
+        <div id="projects">
+          <Projects />
+        </div>
       </div>
       <About />
       <div className="px-8  max-w-7xl mx-auto ">
-        <FAQ />
-        <Contact />
+        <div id="faq">
+          <FAQ />
+        </div>
+        <div id="contact">
+          <Contact />
+        </div>
       </div>
       <Footer />
     </div>

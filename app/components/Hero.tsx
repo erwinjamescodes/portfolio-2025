@@ -37,7 +37,7 @@ export default function Hero() {
   return (
     <main
       ref={heroRef}
-      className="flex-1 flex flex-col items-center text-center pt-[10%] min-h-[calc(100vh-100px)]"
+      className="flex-1 flex flex-col items-center text-center pt-[10%] min-h-[calc(100vh-80px)]"
     >
       <h1
         ref={titleRef}

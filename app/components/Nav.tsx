@@ -1,12 +1,14 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
 export default function Nav() {
   const navRef = useRef(null);
   const logoRef = useRef(null);
   const menuRef = useRef(null);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -20,28 +22,147 @@ export default function Nav() {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.querySelector(
+        ".hero-section"
+      ) as HTMLElement;
+      if (heroSection) {
+        const heroHeight = heroSection.offsetHeight;
+        setHasScrolled(window.scrollY > heroHeight - 200);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isMenuOpen]);
+
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleNavClick = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const navOffset = 100; // Account for fixed navbar height
+      const elementPosition = section.offsetTop - navOffset;
+
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth",
+      });
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav
       ref={navRef}
-      className="flex justify-between items-center py-8 h-[100px]"
+      className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-8 h-[80px] px-8 transition-colors duration-500 ${
+        hasScrolled ? "bg-primary" : "bg-transparent"
+      }`}
     >
-      <div ref={logoRef} className="w-12 h-12 relative">
+      <button
+        ref={logoRef}
+        onClick={() => handleNavClick("hero")}
+        className="w-8 h-8 relative cursor-pointer"
+      >
         <Image
-          src="/assets/logo.png"
+          src={hasScrolled ? "/assets/logo-white.png" : "/assets/logo.png"}
           alt="EJ Logo"
           width={48}
           height={48}
           className="w-full h-full object-contain"
         />
-      </div>
-      <div ref={menuRef} className="w-12 h-12 relative">
+      </button>
+      <button
+        ref={menuRef}
+        onClick={handleMenuClick}
+        className="w-8 h-8 relative cursor-pointer "
+      >
         <Image
-          src="/assets/menu.png"
+          src={hasScrolled ? "/assets/menu-white.png" : "/assets/menu.png"}
           alt="Menu"
           width={48}
           height={48}
           className="w-full h-full object-contain"
         />
+      </button>
+
+      {/* Full Screen Menu */}
+      <div
+        className={`fixed top-0 right-0 h-screen w-screen bg-primary z-[60] transition-transform duration-500 ease-in-out ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex flex-col items-center justify-center h-full text-light">
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="absolute top-8 right-8 w-8 h-8 cursor-pointer"
+          >
+            <Image
+              src="/assets/close-white.png"
+              alt="Close"
+              width={32}
+              height={32}
+              className="w-full h-full object-contain"
+            />
+          </button>
+
+          <ul className="flex flex-col space-y-12 text-4xl font-archivo-black">
+            <li>
+              <button
+                onClick={() => handleNavClick("hero")}
+                className="hover:opacity-70 transition-opacity cursor-pointer"
+              >
+                Home
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => handleNavClick("skills")}
+                className="hover:opacity-70 transition-opacity cursor-pointer"
+              >
+                Skills
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => handleNavClick("projects")}
+                className="hover:opacity-70 transition-opacity cursor-pointer"
+              >
+                Projects
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => handleNavClick("faq")}
+                className="hover:opacity-70 transition-opacity cursor-pointer"
+              >
+                FAQs
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => handleNavClick("contact")}
+                className="hover:opacity-70 transition-opacity cursor-pointer"
+              >
+                Contact Me
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );
