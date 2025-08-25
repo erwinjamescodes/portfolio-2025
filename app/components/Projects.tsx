@@ -1,7 +1,16 @@
-import React from "react";
+'use client';
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
+  const projectsRef = useRef(null);
+  const titleRef = useRef(null);
+  const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
+
   const projects = [
     {
       id: 1,
@@ -21,18 +30,56 @@ const Projects = () => {
     },
   ];
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(titleRef.current,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: "top 85%",
+          }
+        }
+      );
+
+      projectRefs.current.forEach((ref, index) => {
+        if (ref) {
+          gsap.fromTo(ref,
+            { y: 100, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 1.2,
+              ease: "power3.out",
+              delay: index * 0.2,
+              scrollTrigger: {
+                trigger: ref,
+                start: "top 80%",
+              }
+            }
+          );
+        }
+      });
+    }, projectsRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="w-full mt-16">
+    <section ref={projectsRef} className="w-full mt-16">
       <div>
-        <h2 className="text-primary text-4xl font-archivo-black mb-16">
+        <h2 ref={titleRef} className="text-primary text-4xl font-archivo-black mb-16">
           Featured Projects
         </h2>
 
         <div className="space-y-12">
-          {projects.map((project) => (
-            <div key={project.id}>
+          {projects.map((project, index) => (
+            <div key={project.id} ref={el => { projectRefs.current[index] = el; }}>
               <div className="flex flex-col">
-                {/* Image */}
                 <div className="w-full h-80 relative">
                   <Image
                     src={project.image}
@@ -42,9 +89,9 @@ const Projects = () => {
                     className="w-full h-full object-cover grayscale"
                   />
                   <div className="flex flex-wrap gap-2 mb-4 absolute top-4 left-4">
-                    {project.tags.map((tag, index) => (
+                    {project.tags.map((tag, tagIndex) => (
                       <span
-                        key={index}
+                        key={tagIndex}
                         className="px-2 py-1 text-light text-sm  bg-primary font-archivo-black lowercase"
                       >
                         {tag}

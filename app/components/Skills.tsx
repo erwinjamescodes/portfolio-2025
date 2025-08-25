@@ -1,14 +1,67 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
+  const skillsRef = useRef(null);
+  const titleRef = useRef(null);
+  const skillBox1Ref = useRef(null);
+  const skillBox2Ref = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        titleRef.current,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: "top 85%",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        [skillBox1Ref.current, skillBox2Ref.current],
+        { y: 80, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power3.out",
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: skillsRef.current,
+            start: "top 75%",
+          },
+        }
+      );
+    }, skillsRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="w-full bg-light py-16 mt-16">
-      <h2 className="text-primary text-4xl font-archivo-black mb-16">
+    <section ref={skillsRef} className="w-full bg-light py-16 mt-16">
+      <h2
+        ref={titleRef}
+        className="text-primary text-4xl font-archivo-black mb-16"
+      >
         My expertise
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-3 border-primary">
-        <div className="p-12 border-r-0 md:border-r-3 border-primary pb-32">
+        <div
+          ref={skillBox1Ref}
+          className="p-12 border-r-0 md:border-r-3 border-primary pb-32"
+        >
           <h3 className="text-primary text-3xl font-archivo-black mb-8">
             Software Development
           </h3>
@@ -20,7 +73,7 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="p-12">
+        <div ref={skillBox2Ref} className="p-12">
           <h3 className="text-primary text-3xl font-archivo-black mb-8">
             AI Automation
           </h3>

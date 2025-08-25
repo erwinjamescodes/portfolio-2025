@@ -1,6 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +12,11 @@ const Contact = () => {
     name: "",
     message: "",
   });
+
+  const contactRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const formRef = useRef(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -20,22 +29,49 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
     console.log("Form submitted:", formData);
   };
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: contactRef.current,
+          start: "top 75%",
+        }
+      });
+
+      tl.fromTo(titleRef.current,
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power2.out" }
+      )
+      .fromTo(subtitleRef.current,
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
+        "-=0.6"
+      )
+      .fromTo(formRef.current,
+        { y: 60, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power3.out" },
+        "-=0.4"
+      );
+    }, contactRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="w-full bg-light py-16 ">
-      <h2 className="text-primary text-4xl font-archivo-black mb-2">
-        Let's build amazing things together
+    <section ref={contactRef} className="w-full bg-light py-16 ">
+      <h2 ref={titleRef} className="text-primary text-4xl font-archivo-black mb-2">
+        Let&apos;s build amazing things together
       </h2>
 
-      <p className="text-primary text-xl font-roboto mb-16 max-w-4xl">
-        Ready to talk about your next project? Let's discuss how I can help
+      <p ref={subtitleRef} className="text-primary text-xl font-roboto mb-16 max-w-4xl">
+        Ready to talk about your next project? Let&apos;s discuss how I can help
         bring your ideas to life
       </p>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input
             type="email"
