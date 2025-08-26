@@ -5,13 +5,13 @@ import ProjectOverview from "./ProjectOverview";
 
 const Projects = () => {
   return (
-    <section className="w-full mt-16">
+    <section className="w-full mt-8 sm:mt-16">
       <div>
-        <h2 className="text-primary text-4xl font-archivo-black mb-16">
+        <h2 className="text-primary text-2xl sm:text-4xl font-archivo-black mb-8 sm:mb-16">
           Featured Projects
         </h2>
 
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-12">
           {projects.map((project) => (
             <div key={project.id}>
               <ProjectOverview project={project} />

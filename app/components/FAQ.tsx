@@ -38,8 +38,8 @@ const FAQ = () => {
   };
 
   return (
-    <section className="w-full bg-light py-16 mt-16">
-      <h2 className="text-primary text-4xl font-archivo-black mb-16">
+    <section className="w-full bg-light py-8 sm:py-16 mt-8 sm:mt-16">
+      <h2 className="text-primary text-2xl sm:text-4xl font-archivo-black mb-8 sm:mb-16">
         You might be asking
       </h2>
 
@@ -48,24 +48,26 @@ const FAQ = () => {
           <div key={index} className="border-b border-primary">
             <button
               onClick={() => toggleFAQ(index)}
-              className={`w-full flex justify-between items-center py-8 px-8 text-left transition-colors cursor-pointer ${
+              className={`w-full flex justify-between items-center py-4 sm:py-8 px-4 sm:px-8 text-left transition-colors cursor-pointer ${
                 openIndex === index
                   ? "bg-primary text-light"
                   : "bg-transparent text-primary hover:bg-primary/5 "
               }`}
             >
-              <h3 className="text-2xl font-archivo-black">{faq.question}</h3>
-              <span className="text-3xl font-light ml-4">
+              <h3 className="text-lg sm:text-2xl font-archivo-black pr-2">
+                {faq.question}
+              </h3>
+              <span className="text-2xl sm:text-3xl font-light ml-2 sm:ml-4 flex-shrink-0">
                 {openIndex === index ? "−" : "+"}
               </span>
             </button>
 
             <div
-              className={`bg-primary text-light px-8 overflow-hidden transition-all duration-300 ${
-                openIndex === index ? "max-h-96 pb-8" : "max-h-0"
+              className={`bg-primary text-light px-4 sm:px-8 overflow-hidden transition-all duration-300  ${
+                openIndex === index ? "max-h-96 pb-4 sm:pb-8" : "max-h-0"
               }`}
             >
-              <p className="text-xl font-roboto leading-relaxed lowercase ">
+              <p className="text-lg sm:text-xl font-roboto leading-relaxed lowercase pt-4">
                 {faq.answer}
               </p>
             </div>

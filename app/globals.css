@@ -36,5 +36,35 @@ body {
 }
 
 .animate-marquee {
-  animation: marquee 45s linear infinite;
+  animation: marquee 5s linear infinite;
+}
+
+@media (min-width: 640px) {
+  .animate-marquee {
+    animation: marquee 45s linear infinite;
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Ensure buttons and interactive elements are appropriately sized for touch */
+  button,
+  input,
+  textarea {
+    min-height: 44px;
+  }
+
+  /* Improve text legibility on smaller screens */
+  p,
+  span {
+    line-height: 1.6;
+  }
 }

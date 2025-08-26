@@ -48,6 +48,18 @@ export default function Nav() {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
+
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -121,7 +133,7 @@ export default function Nav() {
             />
           </button>
 
-          <ul className="flex flex-col space-y-12 text-4xl font-archivo-black">
+          <ul className="flex flex-col space-y-8 sm:space-y-12 text-2xl sm:text-3xl md:text-4xl font-archivo-black">
             <li>
               <button
                 onClick={() => handleNavClick("home")}

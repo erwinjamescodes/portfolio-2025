@@ -4,7 +4,7 @@ import ProjectOverview from "../components/ProjectOverview";
 
 export default function ProjectsPage() {
   return (
-    <div className="px-8 pt-[100px]">
+    <div className="px-8 pt-[50px] md:pt-[100px]">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 mt-16">
           <h1 className="text-primary text-4xl md:text-5xl font-archivo-black mb-2">
