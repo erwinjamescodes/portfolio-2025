@@ -9,7 +9,7 @@ import Contact from "./components/Contact";
 export default function Home() {
   return (
     <div className="flex flex-col mx-auto ">
-      <div id="hero" className="hero-section px-8 pt-[100px]">
+      <div id="home" className="hero-section px-8 pt-[100px]">
         <div className="max-w-7xl mx-auto">
           <Hero />
         </div>
@@ -23,9 +23,11 @@ export default function Home() {
           <Projects />
         </div>
       </div>
-      <About />
+      <div id="about">
+        <About />
+      </div>
       <div className="px-8  max-w-7xl mx-auto ">
-        <div id="faq">
+        <div id="faqs">
           <FAQ />
         </div>
         <div id="contact">

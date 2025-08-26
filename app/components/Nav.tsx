@@ -71,7 +71,7 @@ export default function Nav() {
   const handleNavClick = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      const navOffset = 100; // Account for fixed navbar height
+      const navOffset = sectionId === "projects" ? 150 : 100; // Account for fixed navbar height
       const elementPosition = section.offsetTop - navOffset;
 
       window.scrollTo({
@@ -89,11 +89,7 @@ export default function Nav() {
         hasScrolled ? "bg-primary" : "bg-transparent"
       }`}
     >
-      <Link
-        ref={logoRef}
-        href="/"
-        className="w-8 h-8 relative cursor-pointer"
-      >
+      <Link ref={logoRef} href="/" className="w-8 h-8 relative cursor-pointer">
         <Image
           src={hasScrolled ? "/assets/logo-white.png" : "/assets/logo.png"}
           alt="EJ Logo"
@@ -138,40 +134,52 @@ export default function Nav() {
 
           <ul className="flex flex-col space-y-12 text-4xl font-archivo-black">
             <li>
-              <Link
-                href="/"
-                onClick={() => setIsMenuOpen(false)}
+              <button
+                onClick={() => handleNavClick("home")}
                 className="hover:opacity-70 transition-opacity cursor-pointer"
               >
                 Home
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="/projects"
-                onClick={() => setIsMenuOpen(false)}
+              <button
+                onClick={() => handleNavClick("skills")}
+                className="hover:opacity-70 transition-opacity cursor-pointer"
+              >
+                Skills
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => handleNavClick("projects")}
                 className="hover:opacity-70 transition-opacity cursor-pointer"
               >
                 Projects
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="/blog"
-                onClick={() => setIsMenuOpen(false)}
+              <button
+                onClick={() => handleNavClick("about")}
                 className="hover:opacity-70 transition-opacity cursor-pointer"
               >
-                Blog
-              </Link>
+                About
+              </button>
             </li>
             <li>
-              <Link
-                href="/contact"
-                onClick={() => setIsMenuOpen(false)}
+              <button
+                onClick={() => handleNavClick("faqs")}
+                className="hover:opacity-70 transition-opacity cursor-pointer"
+              >
+                FAQs
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => handleNavClick("contact")}
                 className="hover:opacity-70 transition-opacity cursor-pointer"
               >
                 Contact
-              </Link>
+              </button>
             </li>
           </ul>
         </div>
