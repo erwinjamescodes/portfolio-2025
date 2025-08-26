@@ -67,7 +67,7 @@ const FAQ = () => {
                 openIndex === index ? "max-h-96 pb-4 sm:pb-8" : "max-h-0"
               }`}
             >
-              <p className="text-lg sm:text-xl font-roboto leading-relaxed lowercase pt-4">
+              <p className="text-lg sm:text-xl font-roboto leading-relaxed lowercase py-4">
                 {faq.answer}
               </p>
             </div>
