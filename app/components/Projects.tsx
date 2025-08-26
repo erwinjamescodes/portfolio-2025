@@ -1,10 +1,10 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projects } from "../lib/projects";
-import ProjectDetails from "./ProjectDetails";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,7 +12,6 @@ const Projects = () => {
   const projectsRef = useRef(null);
   const titleRef = useRef(null);
   const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [expandedProject, setExpandedProject] = useState<string | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -99,30 +98,21 @@ const Projects = () => {
                     <h3 className="font-archivo-black uppercase text-2xl">
                       {project.title}
                     </h3>
-                    <button
-                      onClick={() =>
-                        setExpandedProject(
-                          expandedProject === project.slug ? null : project.slug
-                        )
-                      }
+                    <Link
+                      href={`/projects/${project.slug}`}
                       className="font-archivo-black text-sm cursor-pointer hover:text-primary transition-colors"
                     >
-                      {expandedProject === project.slug
-                        ? "show less"
-                        : "read more"}
-                    </button>
+                      read more
+                    </Link>
                   </div>
 
-                  <ProjectDetails
-                    project={project}
-                    isExpanded={expandedProject === project.slug}
-                  />
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
     </section>
   );
 };

@@ -31,9 +31,7 @@ export default function RootLayout({
       <body
         className={`${archivoBlack.variable} ${roboto.variable} antialiased`}
       >
-        <Nav />
         {children}
-        <Footer />
       </body>
     </html>
   );

@@ -18,7 +18,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.hero-section {
+.hero-section,
+.project-details {
   background-color: #f6f5f1;
   background-image: linear-gradient(#ececec 1px, transparent 1px),
     linear-gradient(to right, #ececec 1px, #f6f5f1 1px);
