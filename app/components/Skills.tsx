@@ -2,7 +2,6 @@
 import React from "react";
 
 const Skills = () => {
-
   return (
     <section className="w-full bg-light py-16 mt-16">
       <h2 className="text-primary text-4xl font-archivo-black mb-16">
@@ -14,7 +13,7 @@ const Skills = () => {
           <h3 className="text-primary text-3xl font-archivo-black mb-8">
             Software Development
           </h3>
-          <p className="text-primary text-lg font-roboto leading-relaxed max-w-md">
+          <p className="text-primary text-xl font-roboto leading-relaxed max-w-md">
             Lorem ipsum dolor sit amet consectetur. Enim sit ullamcorper tellus
             diam facilisi blandit eros sagittis diam. Lorem ipsum dolor sit amet
             consectetur. Enim sit ullamcorper tellus diam facilisi blandit eros
@@ -26,7 +25,7 @@ const Skills = () => {
           <h3 className="text-primary text-3xl font-archivo-black mb-8">
             AI Automation
           </h3>
-          <p className="text-primary text-lg font-roboto leading-relaxed max-w-md">
+          <p className="text-primary text-xl font-roboto leading-relaxed max-w-md">
             Lorem ipsum dolor sit amet consectetur. Enim sit ullamcorper tellus
             diam facilisi blandit eros sagittis diam. Enim sit ullamcorper
             tellus diam facilisi blandit eros sagittis diam. Enim sit

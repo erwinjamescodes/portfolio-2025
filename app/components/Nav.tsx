@@ -54,7 +54,7 @@ export default function Nav() {
 
   const handleNavClick = (sectionId: string) => {
     // If not on home page and trying to navigate to home sections, go to home first
-    if (pathname !== "/" && ["home", "skills", "projects", "about", "faqs", "contact"].includes(sectionId)) {
+    if (pathname !== "/" && ["home", "projects"].includes(sectionId)) {
       window.location.href = `/#${sectionId}`;
       setIsMenuOpen(false);
       return;
@@ -131,53 +131,22 @@ export default function Nav() {
               </button>
             </li>
             <li>
-              <button
-                onClick={() => handleNavClick("skills")}
-                className="hover:opacity-70 transition-opacity cursor-pointer"
-              >
-                Skills
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleNavClick("projects")}
-                className="hover:opacity-70 transition-opacity cursor-pointer"
-              >
-                Projects
-              </button>
-            </li>
-            <li>
               <Link
                 href="/projects"
                 onClick={() => setIsMenuOpen(false)}
                 className="hover:opacity-70 transition-opacity cursor-pointer"
               >
-                All Projects
+                Projects
               </Link>
             </li>
             <li>
-              <button
-                onClick={() => handleNavClick("about")}
-                className="hover:opacity-70 transition-opacity cursor-pointer"
-              >
-                About
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleNavClick("faqs")}
-                className="hover:opacity-70 transition-opacity cursor-pointer"
-              >
-                FAQs
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleNavClick("contact")}
+              <Link
+                href="/contact"
+                onClick={() => setIsMenuOpen(false)}
                 className="hover:opacity-70 transition-opacity cursor-pointer"
               >
                 Contact
-              </button>
+              </Link>
             </li>
           </ul>
         </div>

@@ -37,7 +37,6 @@ const FAQ = () => {
     setOpenIndex(openIndex === index ? -1 : index);
   };
 
-
   return (
     <section className="w-full bg-light py-16 mt-16">
       <h2 className="text-primary text-4xl font-archivo-black mb-16">
@@ -46,10 +45,7 @@ const FAQ = () => {
 
       <div className="space-y-0 max-w-7xl mx-auto w-full">
         {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="border-b border-primary"
-          >
+          <div key={index} className="border-b border-primary">
             <button
               onClick={() => toggleFAQ(index)}
               className={`w-full flex justify-between items-center py-8 px-8 text-left transition-colors cursor-pointer ${
@@ -69,7 +65,7 @@ const FAQ = () => {
                 openIndex === index ? "max-h-96 pb-8" : "max-h-0"
               }`}
             >
-              <p className="text-lg font-roboto leading-relaxed lowercase">
+              <p className="text-xl font-roboto leading-relaxed lowercase ">
                 {faq.answer}
               </p>
             </div>

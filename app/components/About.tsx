@@ -1,8 +1,7 @@
-'use client';
+"use client";
 import React from "react";
 
 const About = () => {
-
   return (
     <div className="w-full bg-primary mt-32">
       <div className="max-w-7xl mx-auto">
@@ -16,7 +15,7 @@ const About = () => {
             </p>
           </div>
 
-          <p className="text-light text-lg font-roboto p-8 flex-1">
+          <p className="text-light text-xl font-roboto p-8 flex-1">
             I&apos;m a Full Stack Developer, AWS Solutions Architect, and AI
             Enthusiast with 4 years of production experience building web
             applications that solve real problems and drive measurable results.
