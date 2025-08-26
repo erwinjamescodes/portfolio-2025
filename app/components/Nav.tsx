@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 
 export default function Nav() {
@@ -9,6 +11,7 @@ export default function Nav() {
   const menuRef = useRef(null);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -24,18 +27,31 @@ export default function Nav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroSection = document.querySelector(
-        ".hero-section"
-      ) as HTMLElement;
-      if (heroSection) {
-        const heroHeight = heroSection.offsetHeight;
-        setHasScrolled(window.scrollY > heroHeight - 200);
+      // Only apply scroll logic on home page
+      if (pathname === "/") {
+        const heroSection = document.querySelector(
+          ".hero-section"
+        ) as HTMLElement;
+        if (heroSection) {
+          const heroHeight = heroSection.offsetHeight;
+          setHasScrolled(window.scrollY > heroHeight - 200);
+        }
+      } else {
+        // Always show primary background on non-home pages
+        setHasScrolled(true);
       }
     };
 
+    // Set initial state based on current page
+    if (pathname !== "/") {
+      setHasScrolled(true);
+    } else {
+      handleScroll();
+    }
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -73,9 +89,9 @@ export default function Nav() {
         hasScrolled ? "bg-primary" : "bg-transparent"
       }`}
     >
-      <button
+      <Link
         ref={logoRef}
-        onClick={() => handleNavClick("hero")}
+        href="/"
         className="w-8 h-8 relative cursor-pointer"
       >
         <Image
@@ -85,7 +101,7 @@ export default function Nav() {
           height={48}
           className="w-full h-full object-contain"
         />
-      </button>
+      </Link>
       <button
         ref={menuRef}
         onClick={handleMenuClick}
@@ -122,44 +138,40 @@ export default function Nav() {
 
           <ul className="flex flex-col space-y-12 text-4xl font-archivo-black">
             <li>
-              <button
-                onClick={() => handleNavClick("hero")}
+              <Link
+                href="/"
+                onClick={() => setIsMenuOpen(false)}
                 className="hover:opacity-70 transition-opacity cursor-pointer"
               >
                 Home
-              </button>
+              </Link>
             </li>
             <li>
-              <button
-                onClick={() => handleNavClick("skills")}
-                className="hover:opacity-70 transition-opacity cursor-pointer"
-              >
-                Skills
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleNavClick("projects")}
+              <Link
+                href="/projects"
+                onClick={() => setIsMenuOpen(false)}
                 className="hover:opacity-70 transition-opacity cursor-pointer"
               >
                 Projects
-              </button>
+              </Link>
             </li>
             <li>
-              <button
-                onClick={() => handleNavClick("faq")}
+              <Link
+                href="/blog"
+                onClick={() => setIsMenuOpen(false)}
                 className="hover:opacity-70 transition-opacity cursor-pointer"
               >
-                FAQs
-              </button>
+                Blog
+              </Link>
             </li>
             <li>
-              <button
-                onClick={() => handleNavClick("contact")}
+              <Link
+                href="/contact"
+                onClick={() => setIsMenuOpen(false)}
                 className="hover:opacity-70 transition-opacity cursor-pointer"
               >
-                Contact Me
-              </button>
+                Contact
+              </Link>
             </li>
           </ul>
         </div>

@@ -37,7 +37,7 @@ export const projects: Project[] = [
         "Maintainability: Automated ingestion pipeline can be re-run for future updates"
       ],
       reflection: "This project was more than just technical execution—it was about turning a tedious process into a motivating experience. The automation handled the heavy lifting of digitizing and cleaning the content, while gamification made practice fun and engaging. It proved to me how powerful it is to combine AI, low-code tools like n8n, and full-stack development into a seamless system. Beyond saving time, it created something with real impact: a smarter, interactive way for learners to prepare for their exams."
-    },
+    }
   },
   {
     id: 2,

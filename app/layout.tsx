@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Archivo_Black, Roboto } from "next/font/google";
 import "./globals.css";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 const archivoBlack = Archivo_Black({
   weight: "400",
@@ -29,7 +31,9 @@ export default function RootLayout({
       <body
         className={`${archivoBlack.variable} ${roboto.variable} antialiased`}
       >
+        <Nav />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -57,18 +57,11 @@ export default function ProjectClient({ project }: ProjectClientProps) {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen bg-light text-dark max-w-7xl mx-auto"
+      className="min-h-screen bg-light text-dark max-w-7xl mx-auto px-8"
     >
-      <div className="container mx-auto px-4 py-8">
-        <Link
-          href="/"
-          className="inline-block mb-8 font-archivo-black text-sm uppercase hover:text-primary transition-colors"
-        >
-          ← Back to Home
-        </Link>
-
-        <div ref={heroRef} className="mb-16">
-          <h1 className="text-primary text-5xl font-archivo-black mb-6 uppercase">
+      <div className="container mx-auto py-8 pt-[100px]">
+        <div ref={heroRef} className="md:my-16">
+          <h1 className="text-primary text-3xl md:text-5xl font-archivo-black my-6 uppercase">
             {project.title}
           </h1>
           <div className="w-full h-96 relative mb-8">
@@ -76,7 +69,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
               src={project.image}
               alt={project.title}
               fill
-              className="object-cover grayscale"
+              className="object-cover "
             />
             <div className="flex flex-wrap gap-2 absolute top-4 left-4">
               {project.tags.map((tag, tagIndex) => (
@@ -104,7 +97,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
               className=""
             >
               <div>
-                <h2 className="text-primary text-3xl font-archivo-black mb-6 uppercase">
+                <h2 className="text-primary text-2xl font-archivo-black mb-6 uppercase">
                   Problem
                 </h2>
                 <p className="text-lg leading-relaxed">
@@ -118,7 +111,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                 contentRefs.current[1] = el;
               }}
             >
-              <h2 className="text-primary text-3xl font-archivo-black mb-6 uppercase">
+              <h2 className="text-primary text-2xl font-archivo-black mb-6 uppercase">
                 Solution
               </h2>
               <p className="text-lg leading-relaxed mb-8">
@@ -131,7 +124,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                 contentRefs.current[2] = el;
               }}
             >
-              <h2 className="text-primary text-3xl font-archivo-black mb-6 uppercase">
+              <h2 className="text-primary text-2xl font-archivo-black mb-6 uppercase">
                 Results
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
@@ -148,7 +141,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                 contentRefs.current[3] = el;
               }}
             >
-              <h2 className="text-primary text-3xl font-archivo-black mb-6 uppercase">
+              <h2 className="text-primary text-2xl font-archivo-black mb-6 uppercase">
                 Reflection
               </h2>
               <p className="text-lg leading-relaxed">
