@@ -3,7 +3,7 @@
 export default function Hero() {
   return (
     <main className="flex-1 flex flex-col items-center text-center pt-[10%] min-h-[80vh] sm:min-h-[calc(100vh-80px)] px-4">
-      <h1 className="text-3xl sm:text-6xl md:text-8xl lg:text-9xl font-archivo-black leading-tight">
+      <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-archivo-black leading-tight">
         ERWINJAMES
       </h1>
 
