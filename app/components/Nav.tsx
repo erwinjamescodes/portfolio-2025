@@ -87,7 +87,7 @@ export default function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-8 h-[80px] px-8 transition-colors duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-8 h-[80px] px-4 md:px-8 transition-colors duration-500 ${
         hasScrolled ? "bg-primary" : "bg-transparent"
       }`}
     >

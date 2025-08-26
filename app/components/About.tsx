@@ -3,14 +3,14 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="w-full bg-primary mt-16 sm:mt-32 px-6">
+    <div className="w-full bg-primary mt-16 sm:mt-32 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:justify-between md:items-start py-8 sm:py-16">
           <div className="flex-1 p-4 sm:p-8 pt-8 sm:pt-16">
-            <p className="text-3xl sm:text-4xl md:text-5xl font-archivo-black uppercase bg-light text-primary inline-block px-2 sm:px-4 py-1 sm:py-2 mb-2 sm:mb-4">
+            <p className="text-2xl sm:text-4xl md:text-5xl font-archivo-black uppercase bg-light text-primary inline-block px-2 sm:px-4 py-1 sm:py-2 mb-2 sm:mb-4">
               Hello there!
             </p>
-            <p className="text-3xl sm:text-4xl md:text-5xl font-archivo-black uppercase bg-light text-primary inline-block px-2 sm:px-4 py-1 sm:py-2">
+            <p className="text-2xl sm:text-4xl md:text-5xl font-archivo-black uppercase bg-light text-primary inline-block px-2 sm:px-4 py-1 sm:py-2">
               I am Erwin James.
             </p>
           </div>
