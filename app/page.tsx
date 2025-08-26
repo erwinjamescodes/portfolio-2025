@@ -5,13 +5,10 @@ import Projects from "./components/Projects";
 import About from "./components/About";
 import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
 
 export default function Home() {
   return (
     <div className="flex flex-col mx-auto ">
-      <Nav />
       <div id="home" className="hero-section px-8 pt-[100px]">
         <div className="max-w-7xl mx-auto">
           <Hero />
@@ -37,7 +34,6 @@ export default function Home() {
           <Contact />
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

@@ -53,6 +53,13 @@ export default function Nav() {
   };
 
   const handleNavClick = (sectionId: string) => {
+    // If not on home page and trying to navigate to home sections, go to home first
+    if (pathname !== "/" && ["home", "skills", "projects", "about", "faqs", "contact"].includes(sectionId)) {
+      window.location.href = `/#${sectionId}`;
+      setIsMenuOpen(false);
+      return;
+    }
+
     const section = document.getElementById(sectionId);
     if (section) {
       const navOffset = sectionId === "projects" ? 150 : 100; // Account for fixed navbar height
@@ -138,6 +145,15 @@ export default function Nav() {
               >
                 Projects
               </button>
+            </li>
+            <li>
+              <Link
+                href="/projects"
+                onClick={() => setIsMenuOpen(false)}
+                className="hover:opacity-70 transition-opacity cursor-pointer"
+              >
+                All Projects
+              </Link>
             </li>
             <li>
               <button

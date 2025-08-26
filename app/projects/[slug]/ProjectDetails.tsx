@@ -2,27 +2,23 @@
 import React from "react";
 import Image from "next/image";
 import { Project } from "../../lib/projects";
-import ProjectNav from "../../components/ProjectNav";
 
 interface ProjectClientProps {
   project: Project;
 }
 
 export default function ProjectClient({ project }: ProjectClientProps) {
-
   if (!project.content) {
     return (
-      <div className="min-h-screen bg-light text-primary flex items-center justify-center">
+      <div className="min-h-screen bg-light text-primary flex items-center justify-center pt-[100px]">
         <p className="text-xl">Project content not found.</p>
       </div>
     );
   }
 
   return (
-    <>
-      <ProjectNav />
-      <div className="min-h-screen bg-light text-primary">
-      <div className="max-w-7xl mx-auto px-8 py-16 pt-24">
+    <div className="min-h-screen bg-light text-primary">
+      <div className="max-w-7xl mx-auto px-8 py-16 pt-36 md:pt-48">
         {/* Project Header */}
         <div className="mb-12">
           <div className="flex flex-wrap gap-2 mb-6">
@@ -38,7 +34,15 @@ export default function ProjectClient({ project }: ProjectClientProps) {
           <h1 className="text-primary text-3xl md:text-5xl font-archivo-black mb-6 uppercase">
             {project.title}
           </h1>
-          <div className="w-full h-96 relative mb-8">
+          <div className="w-full h-120 relative mb-8 hidden md:block">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="w-full h-40 relative mb-8 block md:hidden">
             <Image
               src={project.image}
               alt={project.title}
@@ -60,16 +64,32 @@ export default function ProjectClient({ project }: ProjectClientProps) {
             <h2 className="text-primary text-2xl font-archivo-black mb-6 uppercase">
               Problem
             </h2>
-            <p className="text-lg leading-relaxed">
-              {project.content.problem}
-            </p>
+            <p className="text-xl leading-relaxed">{project.content.problem}</p>
+          </div>
+
+          <div className="w-full h-240 relative mb-8 hidden md:block">
+            <Image
+              src="/assets/claudipedia-2.png"
+              alt={project.title}
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="w-full h-80 relative mb-8 block md:hidden">
+            <Image
+              src="/assets/claudipedia-2.png"
+              alt={project.title}
+              fill
+              className="object-cover"
+            />
           </div>
 
           <div>
             <h2 className="text-primary text-2xl font-archivo-black mb-6 uppercase">
               Solution
             </h2>
-            <p className="text-lg leading-relaxed">
+            <p className="text-xl leading-relaxed">
               {project.content.solution}
             </p>
           </div>
@@ -91,7 +111,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
             <h2 className="text-primary text-2xl font-archivo-black mb-6 uppercase">
               Reflection
             </h2>
-            <p className="text-lg leading-relaxed">
+            <p className="text-xl leading-relaxed">
               {project.content.reflection}
             </p>
           </div>
@@ -123,7 +143,6 @@ export default function ProjectClient({ project }: ProjectClientProps) {
           )}
         </div>
       </div>
-      </div>
-    </>
+    </div>
   );
 }

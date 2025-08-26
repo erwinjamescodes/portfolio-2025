@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getProjectBySlug, getAllProjectSlugs } from "../../lib/projects";
-import ProjectClient from "./ProjectClient";
+import ProjectDetails from "./ProjectDetails";
 
 interface Props {
   params: { slug: string };
@@ -13,7 +13,7 @@ export default function ProjectPage({ params }: Props) {
     notFound();
   }
 
-  return <ProjectClient project={project} />;
+  return <ProjectDetails project={project} />;
 }
 
 export async function generateStaticParams() {

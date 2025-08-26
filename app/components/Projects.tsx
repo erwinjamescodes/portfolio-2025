@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { projects } from "../lib/projects";
-import ProjectDetails from "./ProjectDetails";
+import ProjectOverview from "./ProjectOverview";
 
 const Projects = () => {
   return (
@@ -12,9 +12,9 @@ const Projects = () => {
         </h2>
 
         <div className="space-y-12">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <div key={project.id}>
-              <ProjectDetails project={project} />
+              <ProjectOverview project={project} />
             </div>
           ))}
         </div>
