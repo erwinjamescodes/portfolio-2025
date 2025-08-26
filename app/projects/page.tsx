@@ -7,8 +7,8 @@ export default function ProjectsPage() {
     <div className="px-8 pt-[50px] md:pt-[100px]">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 mt-16">
-          <h1 className="text-primary text-4xl md:text-5xl font-archivo-black mb-2">
-            All Projects
+          <h1 className="text-primary text-2xl md:text-4xl font-archivo-black mb-2">
+            Projects
           </h1>
           <p className="text-xl text-primary">
             This is a collection of my recent personal work and experiments.
