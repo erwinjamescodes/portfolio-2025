@@ -36,7 +36,15 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project }) => {
             <h1 className="text-primary text-3xl md:text-4xl font-archivo-black mb-6 uppercase">
               {project.title}
             </h1>
-            <div className="w-full h-96 relative mb-8">
+            <div className="w-full h-120 relative mb-8 hidden md:block">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="w-full h-48 relative mb-8 block md:hidden">
               <Image
                 src={project.image}
                 alt={project.title}
@@ -73,6 +81,16 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project }) => {
                   <p className="text-lg leading-relaxed">
                     {project.content.solution}
                   </p>
+                </div>
+
+                <div>
+                  <Image
+                    src="/assets/claudipedia-1.png"
+                    alt="Claudipedia"
+                    width={1000}
+                    height={1000}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 <div>

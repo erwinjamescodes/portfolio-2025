@@ -26,7 +26,7 @@ export const projects: Project[] = [
     description:
       "A gamified study app that turns a counseling exam book into an interactive 'Arcade Mode'.",
     tags: ["nextjs", "n8n", "supabase"],
-    image: "/assets/placeholder-project.jpeg",
+    image: "/assets/claudipedia-1.png",
     content: {
       overview:
         "What started as a thick, paper-based counseling exam book is now a fully interactive study platform. Using automation, AI parsing, and a modern full-stack app, I turned 1,100 questions into a gamified 'Arcade Mode' experience. The system combines n8n workflows, an AI extraction pipeline, and Supabase as the data backbone, all tied together in a Next.js web app.",
