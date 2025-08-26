@@ -7,7 +7,19 @@ import { usePathname } from "next/navigation";
 export default function Nav() {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,12 +100,12 @@ export default function Nav() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-8 h-[80px] px-4 md:px-8 transition-colors duration-500 ${
-        hasScrolled ? "bg-primary" : "bg-transparent"
+        hasScrolled || isMobile ? "bg-primary" : "bg-transparent"
       }`}
     >
       <Link href="/" className="w-8 h-8 relative cursor-pointer">
         <Image
-          src={hasScrolled ? "/assets/logo-white.png" : "/assets/logo.png"}
+          src={hasScrolled || isMobile ? "/assets/logo-white.png" : "/assets/logo.png"}
           alt="EJ Logo"
           width={48}
           height={48}
@@ -105,7 +117,7 @@ export default function Nav() {
         className="w-8 h-8 relative cursor-pointer "
       >
         <Image
-          src={hasScrolled ? "/assets/menu-white.png" : "/assets/menu.png"}
+          src={hasScrolled || isMobile ? "/assets/menu-white.png" : "/assets/menu.png"}
           alt="Menu"
           width={48}
           height={48}
