@@ -1,7 +1,6 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import Image from "next/image";
-import { gsap } from "gsap";
 import { Project } from "../../lib/projects";
 import ProjectNav from "../../components/ProjectNav";
 
@@ -10,39 +9,6 @@ interface ProjectClientProps {
 }
 
 export default function ProjectClient({ project }: ProjectClientProps) {
-  const containerRef = useRef(null);
-  const contentRef = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Slide in from right animation
-      gsap.fromTo(
-        containerRef.current,
-        { x: "100%", opacity: 0 },
-        {
-          x: "0%",
-          opacity: 1,
-          duration: 0.6,
-          ease: "power2.out",
-        }
-      );
-
-      // Fade in content after slide animation
-      gsap.fromTo(
-        contentRef.current,
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          delay: 0.3,
-        }
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
 
   if (!project.content) {
     return (
@@ -55,14 +21,8 @@ export default function ProjectClient({ project }: ProjectClientProps) {
   return (
     <>
       <ProjectNav />
-      <div
-        ref={containerRef}
-        className="min-h-screen bg-light text-primary"
-      >
-      <div
-        ref={contentRef}
-        className="max-w-7xl mx-auto px-8 py-16 pt-24"
-      >
+      <div className="min-h-screen bg-light text-primary">
+      <div className="max-w-7xl mx-auto px-8 py-16 pt-24">
         {/* Project Header */}
         <div className="mb-12">
           <div className="flex flex-wrap gap-2 mb-6">

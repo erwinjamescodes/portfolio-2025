@@ -1,16 +1,9 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import React, { useState } from "react";
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0);
-  const faqRef = useRef(null);
-  const titleRef = useRef(null);
-  const faqItemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   const faqs = [
     {
@@ -44,53 +37,10 @@ const FAQ = () => {
     setOpenIndex(openIndex === index ? -1 : index);
   };
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        titleRef.current,
-        { x: -100, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: titleRef.current,
-            start: "top 85%",
-          },
-        }
-      );
-
-      faqItemsRef.current.forEach((ref, index) => {
-        if (ref) {
-          gsap.fromTo(
-            ref,
-            { y: 100, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.8,
-              ease: "power2.out",
-              delay: index * 0.1,
-              scrollTrigger: {
-                trigger: ref,
-                start: "top 90%",
-              },
-            }
-          );
-        }
-      });
-    }, faqRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
-    <section ref={faqRef} className="w-full bg-light py-16 mt-16">
-      <h2
-        ref={titleRef}
-        className="text-primary text-4xl font-archivo-black mb-16"
-      >
+    <section className="w-full bg-light py-16 mt-16">
+      <h2 className="text-primary text-4xl font-archivo-black mb-16">
         You might be asking
       </h2>
 
@@ -98,9 +48,6 @@ const FAQ = () => {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            ref={(el) => {
-              faqItemsRef.current[index] = el;
-            }}
             className="border-b border-primary"
           >
             <button

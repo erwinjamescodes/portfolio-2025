@@ -1,29 +1,13 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { gsap } from "gsap";
 
 export default function Nav() {
-  const navRef = useRef(null);
-  const logoRef = useRef(null);
-  const menuRef = useRef(null);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        [logoRef.current, menuRef.current],
-        { y: -50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, ease: "power2.out", stagger: 0.1 }
-      );
-    }, navRef);
-
-    return () => ctx.revert();
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -84,12 +68,11 @@ export default function Nav() {
 
   return (
     <nav
-      ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-8 h-[80px] px-8 transition-colors duration-500 ${
         hasScrolled ? "bg-primary" : "bg-transparent"
       }`}
     >
-      <Link ref={logoRef} href="/" className="w-8 h-8 relative cursor-pointer">
+      <Link href="/" className="w-8 h-8 relative cursor-pointer">
         <Image
           src={hasScrolled ? "/assets/logo-white.png" : "/assets/logo.png"}
           alt="EJ Logo"
@@ -99,7 +82,6 @@ export default function Nav() {
         />
       </Link>
       <button
-        ref={menuRef}
         onClick={handleMenuClick}
         className="w-8 h-8 relative cursor-pointer "
       >
