@@ -8,8 +8,8 @@ const Skills = () => {
         My expertise
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-3 border-primary">
-        <div className="p-6 sm:p-12 border-r-0 md:border-r-3 border-primary border-b-3 md:border-b-0 pb-6 sm:pb-32">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-2 border-primary">
+        <div className="p-6 sm:p-12 border-r-0 md:border-r-2 border-primary border-b-2 md:border-b-0 pb-6 sm:pb-32">
           <h3 className="text-primary text-xl sm:text-3xl font-archivo-black mb-4 sm:mb-8">
             Software Development
           </h3>
