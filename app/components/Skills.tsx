@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Skills = () => {
   const skillsRef = useRef(null);
   const titleRef = useRef(null);
+  const gridRef = useRef(null);
   const skillBox1Ref = useRef(null);
   const skillBox2Ref = useRef(null);
 
@@ -15,11 +16,11 @@ const Skills = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         titleRef.current,
-        { y: 50, opacity: 0 },
+        { x: -100, opacity: 0 },
         {
-          y: 0,
+          x: 0,
           opacity: 1,
-          duration: 1,
+          duration: 0.8,
           ease: "power2.out",
           scrollTrigger: {
             trigger: titleRef.current,
@@ -29,14 +30,13 @@ const Skills = () => {
       );
 
       gsap.fromTo(
-        [skillBox1Ref.current, skillBox2Ref.current],
-        { y: 80, opacity: 0 },
+        gridRef.current,
+        { x: 300, opacity: 0 },
         {
-          y: 0,
+          x: 0,
           opacity: 1,
-          duration: 1.2,
-          ease: "power3.out",
-          stagger: 0.2,
+          duration: 0.8,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: skillsRef.current,
             start: "top 75%",
@@ -57,7 +57,10 @@ const Skills = () => {
         My expertise
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-3 border-primary">
+      <div
+        ref={gridRef}
+        className="grid grid-cols-1 md:grid-cols-2 gap-0 border-3 border-primary"
+      >
         <div
           ref={skillBox1Ref}
           className="p-12 border-r-0 md:border-r-3 border-primary pb-32"

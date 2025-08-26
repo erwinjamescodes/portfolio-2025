@@ -14,20 +14,19 @@ export default function Hero() {
 
       tl.fromTo(
         titleRef.current,
-        { y: 25, opacity: 0 },
-        { y: 0.5, opacity: 1, duration: 1.2, ease: "power3.out" }
+        { y: 100, opacity: 0 },
+        { y: 0.5, opacity: 1, duration: 0.8, ease: "power2.out" }
       )
         .fromTo(
           subtitleRef.current,
-          { y: 50, opacity: 0 },
-          { y: 0.5, opacity: 1, duration: 1, ease: "power2.out" },
-          "-=0.8"
+          { y: 120, opacity: 0 },
+          { y: 0.5, opacity: 1, duration: 0.8, ease: "power2.out" },
+          "-=0.5"
         )
         .fromTo(
           buttonRef.current,
-          { y: 30, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.8, ease: "back.out(1.7)" },
-          "-=0.6"
+          { opacity: 0, y: 0 },
+          { opacity: 1, y: 0, duration: 0.3, ease: "power1.in" }
         );
     }, heroRef);
 

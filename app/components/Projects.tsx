@@ -34,11 +34,11 @@ const Projects = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         titleRef.current,
-        { y: 50, opacity: 0 },
+        { x: -100, opacity: 0 },
         {
-          y: 0,
+          x: 0,
           opacity: 1,
-          duration: 1,
+          duration: 0.8,
           ease: "power2.out",
           scrollTrigger: {
             trigger: titleRef.current,
@@ -51,12 +51,12 @@ const Projects = () => {
         if (ref) {
           gsap.fromTo(
             ref,
-            { y: 100, opacity: 0 },
+            { x: 300, opacity: 0 },
             {
-              y: 0,
+              x: 0,
               opacity: 1,
-              duration: 1.2,
-              ease: "power3.out",
+              duration: 0.8,
+              ease: "power2.out",
               delay: index * 0.2,
               scrollTrigger: {
                 trigger: ref,

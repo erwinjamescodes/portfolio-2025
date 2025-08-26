@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState(0); 
+  const [openIndex, setOpenIndex] = useState(0);
   const faqRef = useRef(null);
   const titleRef = useRef(null);
   const faqItemsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -46,24 +46,26 @@ const FAQ = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(titleRef.current,
-        { y: 50, opacity: 0 },
+      gsap.fromTo(
+        titleRef.current,
+        { x: -100, opacity: 0 },
         {
-          y: 0,
+          x: 0,
           opacity: 1,
-          duration: 1,
+          duration: 0.8,
           ease: "power2.out",
           scrollTrigger: {
             trigger: titleRef.current,
             start: "top 85%",
-          }
+          },
         }
       );
 
       faqItemsRef.current.forEach((ref, index) => {
         if (ref) {
-          gsap.fromTo(ref,
-            { y: 50, opacity: 0 },
+          gsap.fromTo(
+            ref,
+            { y: 100, opacity: 0 },
             {
               y: 0,
               opacity: 1,
@@ -73,7 +75,7 @@ const FAQ = () => {
               scrollTrigger: {
                 trigger: ref,
                 start: "top 90%",
-              }
+              },
             }
           );
         }
@@ -85,13 +87,22 @@ const FAQ = () => {
 
   return (
     <section ref={faqRef} className="w-full bg-light py-16 mt-16">
-      <h2 ref={titleRef} className="text-primary text-4xl font-archivo-black mb-16">
+      <h2
+        ref={titleRef}
+        className="text-primary text-4xl font-archivo-black mb-16"
+      >
         You might be asking
       </h2>
 
       <div className="space-y-0 max-w-7xl mx-auto w-full">
         {faqs.map((faq, index) => (
-          <div key={index} ref={el => { faqItemsRef.current[index] = el; }} className="border-b border-primary">
+          <div
+            key={index}
+            ref={(el) => {
+              faqItemsRef.current[index] = el;
+            }}
+            className="border-b border-primary"
+          >
             <button
               onClick={() => toggleFAQ(index)}
               className={`w-full flex justify-between items-center py-8 px-8 text-left transition-colors cursor-pointer ${

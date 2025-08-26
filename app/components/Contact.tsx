@@ -43,20 +43,20 @@ const Contact = () => {
 
       tl.fromTo(
         titleRef.current,
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, ease: "power2.out" }
+        { x: -100, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.8, ease: "power2.out" }
       )
         .fromTo(
           subtitleRef.current,
-          { y: 30, opacity: 0 },
+          { y: 100, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
-          "-=0.6"
+          "-=0.5"
         )
         .fromTo(
           formRef.current,
-          { y: 60, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1, ease: "power3.out" },
-          "-=0.4"
+          { y: 120, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
+          "-=0.5"
         );
     }, contactRef);
 
