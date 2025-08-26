@@ -48,7 +48,7 @@ const FAQ = () => {
           <div key={index} className="border-b border-primary">
             <button
               onClick={() => toggleFAQ(index)}
-              className={`w-full flex justify-between items-center py-4 sm:py-8 px-4 sm:px-8 text-left transition-colors cursor-pointer ${
+              className={`w-full flex justify-between items-start py-4 sm:py-8 px-4 sm:px-8 text-left transition-colors cursor-pointer ${
                 openIndex === index
                   ? "bg-primary text-light"
                   : "bg-transparent text-primary hover:bg-primary/5 "
@@ -57,7 +57,7 @@ const FAQ = () => {
               <h3 className="text-lg sm:text-2xl font-archivo-black pr-2">
                 {faq.question}
               </h3>
-              <span className="text-2xl sm:text-3xl font-light ml-2 sm:ml-4 flex-shrink-0">
+              <span className="text-2xl sm:text-3xl font-light ml-2 sm:ml-4 flex-shrink-0 -mt-1">
                 {openIndex === index ? "−" : "+"}
               </span>
             </button>
