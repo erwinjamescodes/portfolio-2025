@@ -1,8 +1,10 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { projects } from "../lib/projects";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,24 +13,6 @@ const Projects = () => {
   const titleRef = useRef(null);
   const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const projects = [
-    {
-      id: 1,
-      title: "Claudipedia",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Enim sit ullamcorper tellus diam facilisi blandit eros sagittis diam. Lorem ipsum dolor sit amet consectetur. Enim sit ullamcorper tellus diam facilisi blandit eros sagittis diam.",
-      tags: ["nextjs", "n8n", "supabase"],
-      image: "/assets/placeholder-project.jpeg",
-    },
-    {
-      id: 2,
-      title: "Automated Email Response",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Enim sit ullamcorper tellus diam facilisi blandit eros sagittis diam. Lorem ipsum dolor sit amet consectetur. Enim sit ullamcorper tellus diam facilisi blandit eros sagittis diam.",
-      tags: ["HTML", "CSS", "Javascript"],
-      image: "/assets/placeholder-project-2.jpg",
-    },
-  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -115,9 +99,12 @@ const Projects = () => {
                     <h3 className="font-archivo-black uppercase text-lg">
                       {project.title}
                     </h3>
-                    <button className="font-archivo-black text-sm cursor-pointer ">
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="font-archivo-black text-sm cursor-pointer hover:text-primary transition-colors"
+                    >
                       read more
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
