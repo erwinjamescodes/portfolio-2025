@@ -34,20 +34,13 @@ export default function ProjectClient({ project }: ProjectClientProps) {
           <h1 className="text-primary text-3xl md:text-5xl font-archivo-black mb-6 uppercase">
             {project.title}
           </h1>
-          <div className="w-full h-120 relative mb-8 hidden md:block">
+          <div className="w-full mb-8">
             <Image
               src={project.image}
               alt={project.title}
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="w-full h-40 relative mb-8 block md:hidden">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-cover"
+              width={1200}
+              height={675}
+              className="w-full h-auto"
             />
           </div>
         </div>
@@ -67,22 +60,25 @@ export default function ProjectClient({ project }: ProjectClientProps) {
             <p className="text-xl leading-relaxed">{project.content.problem}</p>
           </div>
 
-          <div className="w-full h-240 relative mb-8 hidden md:block">
-            <Image
-              src="/assets/claudipedia-2.png"
-              alt={project.title}
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          <div className="w-full h-80 relative mb-8 block md:hidden">
-            <Image
-              src="/assets/claudipedia-2.png"
-              alt={project.title}
-              fill
-              className="object-cover"
-            />
+          <div className="flex flex-col md:flex-row gap-4 mb-8">
+            <div className="md:w-1/2">
+              <Image
+                src="/assets/claudipedia-2.png"
+                alt={project.title}
+                width={1200}
+                height={675}
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="md:w-1/2">
+              <Image
+                src="/assets/claudipedia-3.png"
+                alt={project.title}
+                width={1200}
+                height={675}
+                className="w-full h-auto"
+              />
+            </div>
           </div>
 
           <div>
@@ -106,6 +102,22 @@ export default function ProjectClient({ project }: ProjectClientProps) {
               ))}
             </div>
           </div>
+
+          <Image
+            src="/assets/claudipedia-4.png"
+            alt={project.title}
+            width={1200}
+            height={675}
+            className="w-full h-auto hidden md:block"
+          />
+
+          <Image
+            src="/assets/claudipedia-5.png"
+            alt={project.title}
+            width={1200}
+            height={675}
+            className="w-full h-auto block md:hidden"
+          />
 
           <div>
             <h2 className="text-primary text-2xl font-archivo-black mb-6 uppercase">

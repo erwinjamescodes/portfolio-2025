@@ -30,20 +30,13 @@ const ProjectOverview: React.FC<ProjectOverviewProps> = ({ project }) => {
           <h1 className="text-primary text-xl sm:text-3xl md:text-4xl font-archivo-black mb-4 sm:mb-6 uppercase">
             {project.title}
           </h1>
-          <div className="w-full h-120 relative mb-8 hidden md:block">
+          <div className="w-full mb-8">
             <Image
               src={project.image}
               alt={project.title}
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="w-full h-48 relative mb-8 block md:hidden">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-cover"
+              width={1200}
+              height={675}
+              className="w-full h-auto"
             />
           </div>
         </div>
