@@ -5,8 +5,8 @@ import ProjectOverview from "../components/ProjectOverview";
 
 export default function ProjectsPage() {
   return (
-    <div className="px-8">
-      <div className="max-w-7xl mx-auto pt-[50px] md:pt-36">
+    <div className="px-6 md:px-8">
+      <div className="max-w-7xl mx-auto py-16 pt-36">
         {/* Breadcrumbs */}
         <div className="mb-12 ">
           <nav className="flex items-center space-x-2 text-xs">

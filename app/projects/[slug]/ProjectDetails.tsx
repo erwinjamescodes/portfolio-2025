@@ -18,8 +18,8 @@ export default function ProjectClient({ project }: ProjectClientProps) {
   }
 
   return (
-    <div className="bg-light text-primary">
-      <div className="max-w-7xl mx-auto px-4 md:px-0 py-16 pt-36">
+    <div className="bg-light text-primary px-6 md:px-8">
+      <div className="max-w-7xl mx-auto  py-16 pt-36">
         {/* Breadcrumbs */}
         <div className="mb-12">
           <nav className="flex items-center space-x-2 text-xs">

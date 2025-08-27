@@ -18,9 +18,34 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    try {
+      const response = await fetch(
+        "https://n8n-erwinjamesdev.onrender.com/webhook-test/portfolio-autoresponder",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        console.log("Message sent successfully");
+        setFormData({ email: "", name: "", message: "" });
+      } else {
+        console.error("Failed to send message");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+    }
   };
 
   return (
