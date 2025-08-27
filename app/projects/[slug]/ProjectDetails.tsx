@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Project } from "../../lib/projects";
 
 interface ProjectClientProps {
@@ -17,20 +18,33 @@ export default function ProjectClient({ project }: ProjectClientProps) {
   }
 
   return (
-    <div className="min-h-screen bg-light text-primary">
-      <div className="max-w-7xl mx-auto px-8 py-16 pt-36 md:pt-48">
+    <div className="bg-light text-primary">
+      <div className="max-w-7xl mx-auto px-4 md:px-0 py-16 pt-36">
+        {/* Breadcrumbs */}
+        <div className="mb-12">
+          <nav className="flex items-center space-x-2 text-xs">
+            <Link
+              href="/"
+              className="text-primary hover:underline uppercase font-archivo-black"
+            >
+              Home
+            </Link>
+            <span className="text-primary">&gt;</span>
+            <Link
+              href="/projects"
+              className="text-primary hover:underline uppercase font-archivo-black"
+            >
+              Projects
+            </Link>
+            <span className="text-primary">&gt;</span>
+            <span className="text-primary uppercase font-archivo-black">
+              {project.slug}
+            </span>
+          </nav>
+        </div>
+
         {/* Project Header */}
         <div className="mb-12">
-          <div className="flex flex-wrap gap-2 mb-6">
-            {project.tags.map((tag, tagIndex) => (
-              <span
-                key={tagIndex}
-                className="px-3 py-1 text-light text-sm bg-primary font-archivo-black lowercase"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
           <h1 className="text-primary text-3xl md:text-5xl font-archivo-black mb-6 uppercase">
             {project.title}
           </h1>

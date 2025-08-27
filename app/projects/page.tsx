@@ -1,12 +1,29 @@
 import React from "react";
+import Link from "next/link";
 import { projects } from "../lib/projects";
 import ProjectOverview from "../components/ProjectOverview";
 
 export default function ProjectsPage() {
   return (
-    <div className="px-8 pt-[50px] md:pt-[100px]">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-12 mt-16">
+    <div className="px-8">
+      <div className="max-w-7xl mx-auto pt-[50px] md:pt-36">
+        {/* Breadcrumbs */}
+        <div className="mb-12 ">
+          <nav className="flex items-center space-x-2 text-xs">
+            <Link
+              href="/"
+              className="text-primary hover:underline uppercase font-archivo-black"
+            >
+              Home
+            </Link>
+            <span className="text-primary">&gt;</span>
+            <span className="text-primary uppercase font-archivo-black">
+              Projects
+            </span>
+          </nav>
+        </div>
+
+        <div className="mb-12">
           <h1 className="text-primary text-2xl md:text-4xl font-archivo-black mb-2">
             Projects
           </h1>

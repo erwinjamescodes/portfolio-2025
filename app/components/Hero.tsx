@@ -7,7 +7,7 @@ export default function Hero() {
         ERWINJAMES
       </h1>
 
-      <p className="text-3xl lg:text-7xl mb-8 sm:mb-12 max-w-4xl font-roboto font-normal leading-tight sm:leading-none">
+      <p className="text-3xl lg:text-7xl mb-8 sm:mb-12 max-w-4xl font-roboto font-normal leading-none">
         software developer and ai automation specialist
       </p>
 
