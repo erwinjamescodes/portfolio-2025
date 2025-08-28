@@ -17,7 +17,7 @@ const ProjectOverview: React.FC<ProjectOverviewProps> = ({ project }) => {
       <div className="max-w-7xl mx-auto">
         {/* Project Header */}
         <div className="mb-4">
-          <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
+          {/* <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
             {project.tags.map((tag, tagIndex) => (
               <span
                 key={tagIndex}
@@ -26,7 +26,12 @@ const ProjectOverview: React.FC<ProjectOverviewProps> = ({ project }) => {
                 {tag}
               </span>
             ))}
-          </div>
+          </div> */}
+          {/* <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
+            <div className="px-2 sm:px-3 py-1 text-light text-lg sm:text- bg-primary font-archivo-black lowercase">
+              {project.slug}
+            </div>
+          </div> */}
           <h1 className="text-primary text-xl sm:text-3xl md:text-4xl font-archivo-black mb-4 sm:mb-6 uppercase">
             {project.title}
           </h1>

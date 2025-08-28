@@ -29,9 +29,9 @@ export const projects: Project[] = [
     image: "/assets/claudipedia-1.png",
     content: {
       overview:
-        "What started as a thick, paper-based counseling exam book is now a fully interactive study platform. Using automation, AI parsing, and a modern full-stack app, I turned 1,100 questions into a gamified 'Arcade Mode' experience. The system combines n8n workflows, an AI extraction pipeline, and Supabase as the data backbone, all tied together in a Next.js web app.",
+        "This is Claudipedia, an application I built for my girlfriend, Claudine. What started as a thick, pdf-based counseling exam book is now a fully interactive study platform. Using automation, AI parsing, and a modern full-stack app, I turned 1,100 questions into a gamified 'Arcade Mode' experience. The system combines n8n workflows, an AI extraction pipeline, and Supabase as the data backbone, all tied together in a Next.js web app.",
       problem:
-        "Preparing for board exams with a physical book has obvious limits: static content that can't be randomized or tracked, slow practice due to flipping pages, and zero analytics to measure progress. The challenge was clear—digitize the book, structure the content, and design a review tool that motivates consistent practice.",
+        "Preparing for board exams with a static book has obvious limits: static content that can't be randomized or tracked, slow practice due to flipping pages, and zero analytics to measure progress. The challenge was clear—digitize the book, structure the content, and design a review tool that motivates consistent practice.",
       solution:
         "I designed and built an automated ingestion pipeline and a gamified frontend app. First, I used n8n to orchestrate the extraction of 1,100+ questions, passing them through AI parsing and validation before storing them in Supabase as clean, queryable records. The pipeline was built to be re-runnable so updates or new question sets can be added easily. On top of this, I created a Next.js + Supabase web app featuring multiple study modes (randomized practice, chapter-specific review, progress tracking). The highlight was a fast-paced 'Arcade Mode' interface that transformed studying into something engaging and motivating. With Supabase Auth, users get real-time data, secure sessions, and a responsive UI that works across devices.",
       results: [
@@ -45,7 +45,7 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    title: "EasySpend: A Mobile-First Expense Tracker with Next.js + Supabase",
+    title: "A Mobile-First Expense Tracker with Next.js + Supabase",
     slug: "easyspend",
     description:
       "A fast, mobile-optimized PWA for logging expenses with secure auth, offline support, analytics—and automated receipt ingestion via Telegram using n8n + AI.",
