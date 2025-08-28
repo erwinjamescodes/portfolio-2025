@@ -16,15 +16,18 @@ const About = () => {
           </div>
 
           <p className="text-light text-lg sm:text-xl font-roboto p-4 sm:p-8 flex-1">
-            I&apos;m a Full Stack Developer, AWS Solutions Architect, and AI
-            Enthusiast with 4 years of production experience building web
-            applications that solve real problems and drive measurable results.
-            My journey spans from modernizing legacy systems to architecting
-            cutting-edge multi-tenant SaaS platforms. I&apos;m AWS certified and
-            specialize in cloud-native architectures, leveraging serverless
-            technologies and AI automations to build scalable solutions that
-            bridge technical excellence with business impact through intelligent
-            automation and streamlined workflows.
+            By day, I craft digital experiences as a Full Stack Developer and AI
+            Automation enthusiast. With 4 years in the field across fintech,
+            cloud consultancy, and AI-first development teams, I build solutions
+            that actually solve real problems.
+            <br />
+            <br />
+            When I'm not coding, you'll find me deep into anime series or
+            laughing along to stand-up comedy podcasts—I believe balance keeps
+            creativity flowing between work and play. My approach combines
+            technical know-how with genuine curiosity, whether I'm building a
+            serverless application or debating the best anime storylines. I
+            value meaningful connections both in code architecture and in life.
           </p>
         </div>
       </div>

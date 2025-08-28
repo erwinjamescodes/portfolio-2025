@@ -9,28 +9,88 @@ const Skills = () => {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-2 border-primary">
-        <div className="p-6 sm:p-12 border-r-0 md:border-r-2 border-primary border-b-2 md:border-b-0 pb-6 sm:pb-32">
-          <h3 className="text-primary text-xl sm:text-3xl font-archivo-black mb-4 sm:mb-8">
-            Software Development
-          </h3>
-          <p className="text-primary text-lg sm:text-xl font-roboto leading-relaxed max-w-md">
-            Lorem ipsum dolor sit amet consectetur. Enim sit ullamcorper tellus
-            diam facilisi blandit eros sagittis diam. Lorem ipsum dolor sit amet
-            consectetur. Enim sit ullamcorper tellus diam facilisi blandit eros
-            sagittis diam. Lorem ipsum dolor sit amet consectetur.
-          </p>
+        <div className="p-6 sm:p-12 border-r-0 md:border-r-2 border-primary border-b-2 md:border-b-0 flex flex-col justify-between">
+          <div>
+            <h3 className="text-primary text-xl sm:text-3xl font-archivo-black mb-4 sm:mb-8">
+              Full-Stack Development
+            </h3>
+            <p className="text-primary text-lg sm:text-xl font-roboto leading-relaxed ">
+              I specialize in building modern web applications using Next.js,
+              React, TypeScript, and Node.js with 4 years of production
+              experience. As an AWS Certified Solutions Architect Associate, I'm
+              proficient in cloud technologies and database solutions like
+              PostgreSQL and Supabase. I also enjoy creating responsive UIs with
+              Tailwind CSS and Shadcn UI.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2 mt-12">
+            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+              Next.js
+            </span>
+            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+              React
+            </span>
+            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+              TypeScript
+            </span>
+            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+              Node.js
+            </span>
+            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+              Supabase
+            </span>
+            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+              AWS
+            </span>
+            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+              Tailwind CSS
+            </span>
+            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+              PostgreSQL
+            </span>
+          </div>
         </div>
 
-        <div className="p-6 sm:p-12">
-          <h3 className="text-primary text-xl sm:text-3xl font-archivo-black mb-4 sm:mb-8">
-            AI Automation
-          </h3>
-          <p className="text-primary text-lg sm:text-xl font-roboto leading-relaxed max-w-md">
-            Lorem ipsum dolor sit amet consectetur. Enim sit ullamcorper tellus
-            diam facilisi blandit eros sagittis diam. Enim sit ullamcorper
-            tellus diam facilisi blandit eros sagittis diam. Enim sit
-            ullamcorper tellus diam facilisi blandit eros sagittis diam.
-          </p>
+        <div className="p-6 sm:p-12 flex flex-col justify-between">
+          <div>
+            <h3 className="text-primary text-xl sm:text-3xl font-archivo-black mb-4 sm:mb-8">
+              AI Automation
+            </h3>
+            <p className="text-primary text-lg sm:text-xl font-roboto leading-relaxed ">
+              I leverage AI technologies to create intelligent automation
+              solutions that streamline business processes. I'm experienced in
+              implementing n8n workflows and developing custom AI solutions with
+              OpenAI APIs, while currently exploring GoHighLevel. I'm passionate
+              about building systems that enhance productivity and deliver
+              measurable business impact.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2 mt-12">
+            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+              n8n
+            </span>
+            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+              GoHighLevel
+            </span>
+            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+              OpenAI
+            </span>
+            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+              Zapier
+            </span>
+            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+              Make.com
+            </span>
+            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+              Google Suite
+            </span>
+            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+              Claude AI
+            </span>
+            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+              Gemini API
+            </span>
+          </div>
         </div>
       </div>
     </section>

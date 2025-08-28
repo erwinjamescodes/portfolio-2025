@@ -9,7 +9,7 @@ const FAQ = () => {
     {
       question: "What types of projects do you specialize in?",
       answer:
-        "I specialize in building full-stack web applications, multi-tenant SaaS platforms, and AI-powered solutions. My expertise spans e-commerce platforms, learning management systems, real estate applications, and fintech solutions. I focus on cloud-native architectures using AWS services and integrating AI automations to streamline business processes.",
+        "I specialize in building full-stack web applications, SaaS platforms, and AI-powered solutions. My expertise spans e-commerce platforms, learning management systems, real estate applications, and fintech solutions. I focus on cloud-native architectures and integrating AI automations to streamline business processes.",
     },
     {
       question: "What's your experience with AI and automation?",
@@ -19,17 +19,17 @@ const FAQ = () => {
     {
       question: "Which technologies and frameworks do you work with?",
       answer:
-        "My technical stack includes Next.js, React.js, React Native, Node.js, and modern JavaScript/TypeScript for development. For cloud infrastructure, I use AWS services like Lambda, S3, and DynamoDB. I'm experienced with authentication systems, payment processing, database optimization, and creating responsive, accessible user interfaces with modern CSS frameworks.",
+        "My technical stack includes Next.js, React.js, React Native, Node.js, and modern JavaScript/TypeScript for development. For cloud infrastructure, I use AWS services like Lambda, S3, and DynamoDB. In AI automation, I also work with n8n, OpenAI and Gemini APIs, GoHighLevel, and custom AI integrations.",
     },
     {
       question: "Are you available for freelance or consulting work?",
       answer:
-        "Yes, I'm available for both full-time opportunities and consulting projects. I work with startups, established companies, and individual entrepreneurs who need technical expertise in web development, cloud architecture, or AI integration. I'm particularly interested in projects that solve real business problems and have measurable impact.",
+        "Yes, I'm available for both full-time opportunities and consulting projects. I work with startups, established companies, and individual entrepreneurs who need technical expertise in web development or AI integration.",
     },
     {
       question: "How do you approach new projects?",
       answer:
-        "I start by understanding the business problem and target users, then design scalable technical solutions that align with your goals and budget. My process includes market research, technical planning, iterative development, and performance optimization. I focus on building maintainable code, implementing proper security measures, and ensuring solutions can scale as your business grows.",
+        "I start by understanding the business problem and target users, then design scalable technical solutions that align with your goals and budget. My process includes market research, technical planning, iterative development, and performance optimization. I focus on building maintainable code and ensuring solutions can scale as your business grows.",
     },
   ];
 

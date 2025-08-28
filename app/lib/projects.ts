@@ -53,7 +53,7 @@ export const projects: Project[] = [
     image: "/assets/easyspend-1.png",
     content: {
       overview:
-        "EasySpend is a personal expense tracking platform built with Next.js 14 and Supabase. Beyond quick manual entry and clear analytics, it also supports automated expense ingestion: send a receipt photo via Telegram and an n8n + AI pipeline parses it, formats it, and adds it to your Supabase account.",
+        "EasySpend is my personal expense tracking platform built with Next.js 14 and Supabase. Beyond quick manual entry and clear analytics, it also supports automated expense ingestion: send a receipt photo via Telegram and an n8n + AI pipeline parses it, formats it, and adds it to your Supabase account.",
       problem:
         "People struggle to consistently track expenses because tools are slow on mobile, lack offline resilience, and don’t surface actionable insights. Spreadsheets and generic apps make it hard to quickly log purchases, visualize patterns, or stay motivated to build a habit.",
       solution:
