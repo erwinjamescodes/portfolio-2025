@@ -67,7 +67,7 @@ export async function POST(request: NextRequest) {
     await resend.emails.send({
       from: "Erwin James <hello@erwinjames.world>",
       to: [email],
-      subject: "Thanks for reaching out! 📬",
+      subject: "Thanks for reaching out!",
       html: `
                <div style="font-family: 'Archivo Black', Arial, sans-serif; line-height: 1.6; color: #1e1e1e; padding: 20px;">
           <!-- Header -->
@@ -95,7 +95,7 @@ export async function POST(request: NextRequest) {
               <!-- Overview -->
               <p style="margin: 0 0 20px 0; font-size: 16px; line-height: 1.6; color: #1e1e1e;">What started as a thick, paper-based counseling exam book is now a fully interactive study platform. Using automation, AI parsing, and a modern full-stack app, I turned 1,100 questions into a gamified 'Arcade Mode' experience.</p>
               <!-- Button -->
-              <a href="https://erwinjames.world/projects/easyspend-1.png" style="border: 2px solid #1e1e1e; color: #1e1e1e; padding: 12px 16px; text-decoration: none; text-transform: uppercase; font-weight: 900; display: inline-block; font-size: 14px; transition: all 0.2s;">READ MORE</a>
+              <a href="https://erwinjames.world/projects/claudipedia" style="border: 2px solid #1e1e1e; color: #1e1e1e; padding: 12px 16px; text-decoration: none; text-transform: uppercase; font-weight: 900; display: inline-block; font-size: 14px; transition: all 0.2s;">READ MORE</a>
             </div>
 
             <!-- EasySpend Project -->
