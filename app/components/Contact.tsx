@@ -18,33 +18,38 @@ const Contact = () => {
     });
   };
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
 
     try {
-      const response = await fetch(
-        "https://n8n-erwinjamesdev.onrender.com/webhook-test/portfolio-autoresponder",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            message: formData.message,
-          }),
-        }
-      );
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
 
       if (response.ok) {
-        console.log("Message sent successfully");
+        setSubmitStatus("success");
         setFormData({ email: "", name: "", message: "" });
       } else {
-        console.error("Failed to send message");
+        throw new Error("Failed to send message");
       }
     } catch (error) {
       console.error("Error sending message:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -91,11 +96,28 @@ const Contact = () => {
           required
         />
 
+        {submitStatus === "success" && (
+          <div className="p-4 bg-green-100 border border-green-400 text-green-700 rounded mb-4">
+            ✓ Message sent successfully! I'll get back to you soon.
+          </div>
+        )}
+        
+        {submitStatus === "error" && (
+          <div className="p-4 bg-red-100 border border-red-400 text-red-700 rounded mb-4">
+            ✗ Failed to send message. Please try again or contact us directly.
+          </div>
+        )}
+
         <button
           type="submit"
-          className="w-full bg-primary text-light py-3 sm:py-2 text-md sm:text-xl font-archivo-black tracking-wider hover:shadow-[5px_5px_0px_0px_#808080] transform transition-all cursor-pointer origin-center"
+          disabled={isSubmitting}
+          className={`w-full py-3 sm:py-2 text-md sm:text-xl font-archivo-black tracking-wider transform transition-all origin-center ${
+            isSubmitting 
+              ? 'bg-gray-400 text-gray-600 cursor-not-allowed' 
+              : 'bg-primary text-light hover:shadow-[5px_5px_0px_0px_#808080] cursor-pointer'
+          }`}
         >
-          SEND MESSAGE
+          {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
         </button>
       </form>
     </section>
