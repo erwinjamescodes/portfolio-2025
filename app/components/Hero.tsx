@@ -1,6 +1,13 @@
 "use client";
 
 export default function Hero() {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <main className="flex-1 flex flex-col items-center text-center pt-[40%] md:pt-[10%] min-h-[80vh] sm:min-h-[calc(100vh-80px)] px-4">
       <h1 className="text-[42px]  md:text-8xl lg:text-9xl font-archivo-black leading-tight">
@@ -11,7 +18,10 @@ export default function Hero() {
         software developer and ai automation specialist
       </p>
 
-      <button className="bg-primary text-white px-4 sm:px-8 py-3 sm:py-4 text-md sm:text-2xl md:text-3xl uppercase tracking-wide hover:shadow-[5px_5px_0px_0px_#808080] transform transition-all font-archivo-black cursor-pointer origin-center">
+      <button
+        onClick={scrollToContact}
+        className="bg-primary text-white px-4 sm:px-8 py-3 sm:py-4 text-md sm:text-2xl md:text-3xl uppercase tracking-wide hover:shadow-[5px_5px_0px_0px_#808080] transform transition-all font-archivo-black cursor-pointer origin-center"
+      >
         LET&apos;S BUILD SOMETHING
       </button>
     </main>

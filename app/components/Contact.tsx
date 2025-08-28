@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +19,21 @@ const Contact = () => {
   };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
+
+  // Effect to clear status messages after 5 seconds
+  useEffect(() => {
+    if (submitStatus === "success" || submitStatus === "error") {
+      const timer = setTimeout(() => {
+        setSubmitStatus("idle");
+      }, 5000);
+
+      // Clean up the timer when component unmounts or status changes
+      return () => clearTimeout(timer);
+    }
+  }, [submitStatus]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -97,14 +111,14 @@ const Contact = () => {
         />
 
         {submitStatus === "success" && (
-          <div className="p-4 bg-green-100 border border-green-400 text-green-700 rounded mb-4">
-            ✓ Message sent successfully! I'll get back to you soon.
+          <div className="p-4 bg-gray-100 border border-gray-400 text-gray-700 rounded mb-4">
+            Message sent successfully! Thank you and I'll get back to you soon!
           </div>
         )}
-        
+
         {submitStatus === "error" && (
-          <div className="p-4 bg-red-100 border border-red-400 text-red-700 rounded mb-4">
-            ✗ Failed to send message. Please try again or contact us directly.
+          <div className="p-4 bg-gray-100 border border-gray-400 text-gray-700 rounded mb-4">
+            Failed to send message. Please try again later.
           </div>
         )}
 
@@ -112,12 +126,38 @@ const Contact = () => {
           type="submit"
           disabled={isSubmitting}
           className={`w-full py-3 sm:py-2 text-md sm:text-xl font-archivo-black tracking-wider transform transition-all origin-center ${
-            isSubmitting 
-              ? 'bg-gray-400 text-gray-600 cursor-not-allowed' 
-              : 'bg-primary text-light hover:shadow-[5px_5px_0px_0px_#808080] cursor-pointer'
+            isSubmitting
+              ? "bg-gray-300 text-light/60 cursor-not-allowed"
+              : "bg-primary text-light hover:shadow-[5px_5px_0px_0px_#808080] cursor-pointer"
           }`}
         >
-          {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
+          {isSubmitting ? (
+            <span className="flex items-center justify-center">
+              <svg
+                className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+              SENDING MESSAGE...
+            </span>
+          ) : (
+            "SEND MESSAGE"
+          )}
         </button>
       </form>
     </section>
