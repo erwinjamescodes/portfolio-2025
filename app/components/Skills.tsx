@@ -17,8 +17,8 @@ const Skills = () => {
             <p className="text-primary text-lg sm:text-xl font-roboto leading-relaxed ">
               I specialize in building modern web applications using Next.js,
               React, TypeScript, and Node.js with 4 years of production
-              experience. As an AWS Certified Solutions Architect Associate, I'm
-              proficient in cloud technologies and database solutions like
+              experience. As an AWS Certified Solutions Architect Associate, I
+              am proficient in cloud technologies and database solutions like
               PostgreSQL and Supabase. I also enjoy creating responsive UIs with
               Tailwind CSS and Shadcn UI.
             </p>
@@ -58,11 +58,11 @@ const Skills = () => {
             </h3>
             <p className="text-primary text-lg sm:text-xl font-roboto leading-relaxed ">
               I leverage AI technologies to create intelligent automation
-              solutions that streamline business processes. I'm experienced in
+              solutions that streamline business processes. I am experienced in
               implementing n8n workflows and developing custom AI solutions with
-              OpenAI APIs, while currently exploring GoHighLevel. I'm passionate
-              about building systems that enhance productivity and deliver
-              measurable business impact.
+              OpenAI APIs, while currently exploring GoHighLevel. I am
+              passionate about building systems that enhance productivity and
+              deliver measurable business impact.
             </p>
           </div>
           <div className="flex flex-wrap gap-2 mt-12">

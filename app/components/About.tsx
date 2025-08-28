@@ -22,10 +22,10 @@ const About = () => {
             that actually solve real problems.
             <br />
             <br />
-            When I'm not coding, you'll find me deep into anime series or
+            When I am not coding, you will find me deep into anime series or
             laughing along to stand-up comedy podcasts—I believe balance keeps
             creativity flowing between work and play. My approach combines
-            technical know-how with genuine curiosity, whether I'm building a
+            technical know-how with genuine curiosity, whether I am building a
             serverless application or debating the best anime storylines. I
             value meaningful connections both in code architecture and in life.
           </p>
