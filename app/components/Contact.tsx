@@ -111,14 +111,14 @@ const Contact = () => {
         />
 
         {submitStatus === "success" && (
-          <div className="p-4 bg-gray-100 border border-gray-400 text-gray-700 rounded mb-4">
+          <div className="p-4 bg-gray-100 border border-gray-400 text-gray-700  mb-4">
             Message sent successfully! Thank you and I will get back to you
             soon!
           </div>
         )}
 
         {submitStatus === "error" && (
-          <div className="p-4 bg-gray-100 border border-gray-400 text-gray-700 rounded mb-4">
+          <div className="p-4 bg-gray-100 border border-gray-400 text-gray-700  mb-4">
             Failed to send message. Please try again later.
           </div>
         )}
