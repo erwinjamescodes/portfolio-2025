@@ -74,27 +74,28 @@ export default function ProjectClient({ project }: ProjectClientProps) {
             <p className="text-xl leading-relaxed">{project.content.problem}</p>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-4 mb-8">
-            <div className="md:w-1/2">
-              <Image
-                src="/assets/claudipedia-2.png"
-                alt={project.title}
-                width={1200}
-                height={675}
-                className="w-full h-auto"
-              />
+          {project.imageGrid?.image2 && project.imageGrid?.image3 && (
+            <div className="flex flex-col md:flex-row gap-4 mb-8">
+              <div className="md:w-1/2">
+                <Image
+                  src={project.imageGrid?.image2 || ""}
+                  alt={project.title}
+                  width={1200}
+                  height={675}
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="md:w-1/2">
+                <Image
+                  src={project.imageGrid?.image3 || ""}
+                  alt={project.title}
+                  width={1200}
+                  height={675}
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
-            <div className="md:w-1/2">
-              <Image
-                src="/assets/claudipedia-3.png"
-                alt={project.title}
-                width={1200}
-                height={675}
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-
+          )}
           <div>
             <h2 className="text-primary text-2xl font-archivo-black mb-6 uppercase">
               Solution
@@ -117,21 +118,24 @@ export default function ProjectClient({ project }: ProjectClientProps) {
             </div>
           </div>
 
-          <Image
-            src="/assets/claudipedia-4.png"
-            alt={project.title}
-            width={1200}
-            height={675}
-            className="w-full h-auto hidden md:block"
-          />
-
-          <Image
-            src="/assets/claudipedia-5.png"
-            alt={project.title}
-            width={1200}
-            height={675}
-            className="w-full h-auto block md:hidden"
-          />
+          {project.imageGrid?.image4 && (
+            <Image
+              src="/assets/claudipedia-4.png"
+              alt={project.title}
+              width={1200}
+              height={675}
+              className="w-full h-auto hidden md:block"
+            />
+          )}
+          {project.imageGrid?.image5 && (
+            <Image
+              src="/assets/claudipedia-5.png"
+              alt={project.title}
+              width={1200}
+              height={675}
+              className="w-full h-auto block md:hidden"
+            />
+          )}
 
           <div>
             <h2 className="text-primary text-2xl font-archivo-black mb-6 uppercase">

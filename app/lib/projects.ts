@@ -5,6 +5,12 @@ export interface Project {
   description: string;
   tags: string[];
   image: string;
+  imageGrid?: {
+    image2?: string;
+    image3?: string;
+    image4?: string;
+    image5?: string;
+  };
   content?: {
     overview: string;
     problem: string;
@@ -27,6 +33,12 @@ export const projects: Project[] = [
       "A gamified study app that turns a counseling exam book into an interactive 'Arcade Mode'.",
     tags: ["nextjs", "n8n", "supabase"],
     image: "/assets/claudipedia-1.png",
+    imageGrid: {
+      image2: "/assets/claudipedia-2.png",
+      image3: "/assets/claudipedia-3.png",
+      image4: "/assets/claudipedia-4.png",
+      image5: "/assets/claudipedia-5.png",
+    },
     content: {
       overview:
         "This is Claudipedia, an application I built for my girlfriend, Claudine. What started as a thick, pdf-based counseling exam book is now a fully interactive study platform. Using automation, AI parsing, and a modern full-stack app, I turned 1,100 questions into a gamified 'Arcade Mode' experience. The system combines n8n workflows, an AI extraction pipeline, and Supabase as the data backbone, all tied together in a Next.js web app.",
@@ -51,6 +63,10 @@ export const projects: Project[] = [
       "A fast, mobile-optimized PWA for logging expenses with secure auth, offline support, analytics—and automated receipt ingestion via Telegram using n8n + AI.",
     tags: ["nextjs", "n8n", "supabase"],
     image: "/assets/easyspend-1.png",
+    imageGrid: {
+      image2: "/assets/easyspend-2.png",
+      image3: "/assets/easyspend-3.png",
+    },
     content: {
       overview:
         "EasySpend is my personal expense tracking platform built with Next.js 14 and Supabase. Beyond quick manual entry and clear analytics, it also supports automated expense ingestion: send a receipt photo via Telegram and an n8n + AI pipeline parses it, formats it, and adds it to your Supabase account.",
@@ -61,7 +77,7 @@ export const projects: Project[] = [
       results: [
         "Speed: Time-to-log-expense targeted under 10 seconds on mobile",
         "Automation: Add expenses by sending a receipt image via Telegram (n8n + AI → Supabase)",
-        "Insights: Clear category breakdowns, trends, and export options (CSV/PDF)",
+        "Insights: Clear category breakdowns and trends",
       ],
       reflection:
         "This project blends a great mobile UX with an automated ingestion pipeline that removes friction. The Telegram → n8n → AI flow turns receipt photos into structured entries with minimal effort, while Next.js + Supabase provide a secure, scalable backbone. With this foundation, the app is ready for extensions like budgets, recurring expenses, and receipt capture enhancements.",
