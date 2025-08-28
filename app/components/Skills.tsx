@@ -24,28 +24,28 @@ const Skills = () => {
             </p>
           </div>
           <div className="flex flex-wrap gap-2 mt-12">
-            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+            <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               Next.js
             </span>
-            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+            <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               React
             </span>
-            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+            <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               TypeScript
             </span>
-            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+            <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               Node.js
             </span>
-            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+            <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               Supabase
             </span>
-            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+            <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               AWS
             </span>
-            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+            <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               Tailwind CSS
             </span>
-            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+            <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               PostgreSQL
             </span>
           </div>
@@ -66,28 +66,28 @@ const Skills = () => {
             </p>
           </div>
           <div className="flex flex-wrap gap-2 mt-12">
-            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+            <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               n8n
             </span>
-            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+            <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               GoHighLevel
             </span>
-            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+            <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               OpenAI
             </span>
-            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+            <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               Zapier
             </span>
-            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+            <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               Make.com
             </span>
-            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+            <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               Google Suite
             </span>
-            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+            <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               Claude AI
             </span>
-            <span className="border border-primary text-primary px-3 py-1 text-xs font-medium">
+            <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               Gemini API
             </span>
           </div>
