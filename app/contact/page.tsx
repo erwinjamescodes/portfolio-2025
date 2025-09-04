@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Contact from "../components/Contact";
+import Contact from "../_sections/Contact";
 
 export default function ContactPage() {
   return (

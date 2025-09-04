@@ -1,10 +1,10 @@
-import Hero from "./components/Hero";
-import Marquee from "./components/Marquee";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import About from "./components/About";
-import FAQ from "./components/FAQ";
-import Contact from "./components/Contact";
+import Hero from "./_sections/Hero";
+import Marquee from "./_sections/Marquee";
+import Skills from "./_sections/Skills";
+import Projects from "./_sections/Projects";
+import About from "./_sections/About";
+import FAQ from "./_sections/FAQ";
+import Contact from "./_sections/Contact";
 
 export default function Home() {
   return (

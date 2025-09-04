@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Archivo_Black, Roboto } from "next/font/google";
 import "./globals.css";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
+import Nav from "./_sections/Nav";
+import Footer from "./_sections/Footer";
 
 const archivoBlack = Archivo_Black({
   weight: "400",

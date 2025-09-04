@@ -5,11 +5,11 @@ export interface Project {
   description: string;
   tags: string[];
   image: string;
+  github: string;
+  n8nImage?: string;
   imageGrid?: {
+    image1?: string;
     image2?: string;
-    image3?: string;
-    image4?: string;
-    image5?: string;
   };
   content?: {
     overview: string;
@@ -27,18 +27,19 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "From Book to App: Automating a 1,100-Question Study System",
+    title:
+      "From Book to App: Gamifying a 1,100-Question Board Exam Review Experience",
     slug: "claudipedia",
     description:
       "A gamified study app that turns a counseling exam book into an interactive 'Arcade Mode'.",
     tags: ["nextjs", "n8n", "supabase"],
-    image: "/assets/claudipedia-1.png",
+    image: "/assets/claudipedia-cover.png",
+    github: "https://github.com/erwinjamescodes/claudipedia",
     imageGrid: {
-      image2: "/assets/claudipedia-2.png",
-      image3: "/assets/claudipedia-3.png",
-      image4: "/assets/claudipedia-4.png",
-      image5: "/assets/claudipedia-5.png",
+      image1: "/assets/claudipedia-2.png",
+      image2: "/assets/claudipedia-3.png",
     },
+    n8nImage: "/assets/claudipedia-1.png",
     content: {
       overview:
         "This is Claudipedia, an application I built for my girlfriend, Claudine. What started as a thick, pdf-based counseling exam book is now a fully interactive study platform. Using automation, AI parsing, and a modern full-stack app, I turned 1,100 questions into a gamified 'Arcade Mode' experience. The system combines n8n workflows, an AI extraction pipeline, and Supabase as the data backbone, all tied together in a Next.js web app.",
@@ -62,11 +63,13 @@ export const projects: Project[] = [
     description:
       "A fast, mobile-optimized PWA for logging expenses with secure auth, offline support, analytics—and automated receipt ingestion via Telegram using n8n + AI.",
     tags: ["nextjs", "n8n", "supabase"],
-    image: "/assets/easyspend-1.png",
+    image: "/assets/easyspend-cover.png",
+    github: "https://github.com/erwinjamescodes/personal-expense-tracker",
     imageGrid: {
-      image2: "/assets/easyspend-2.png",
-      image3: "/assets/easyspend-3.png",
+      image1: "/assets/easyspend-2.png",
+      image2: "/assets/easyspend-3.png",
     },
+    n8nImage: "/assets/easyspend-1.png",
     content: {
       overview:
         "EasySpend is my personal expense tracking platform built with Next.js 14 and Supabase. Beyond quick manual entry and clear analytics, it also supports automated expense ingestion: send a receipt photo via Telegram and an n8n + AI pipeline parses it, formats it, and adds it to your Supabase account.",

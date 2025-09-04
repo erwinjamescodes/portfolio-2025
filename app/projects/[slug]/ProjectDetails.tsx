@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Project } from "../../lib/projects";
+import GithubButton from "../../_components/github";
 
 interface ProjectClientProps {
   project: Project;
@@ -48,15 +49,29 @@ export default function ProjectClient({ project }: ProjectClientProps) {
           <h1 className="text-primary text-3xl md:text-5xl font-archivo-black mb-6 uppercase">
             {project.title}
           </h1>
-          <div className="w-full mb-8">
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={1200}
-              height={675}
-              className="w-full h-auto"
-            />
-          </div>
+
+          {project.imageGrid?.image1 && project.imageGrid?.image2 && (
+            <div className="flex flex-col md:flex-row gap-4 mb-8">
+              <div className="md:w-1/2">
+                <Image
+                  src={project.imageGrid?.image1 || ""}
+                  alt={project.title}
+                  width={1200}
+                  height={675}
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="md:w-1/2">
+                <Image
+                  src={project.imageGrid?.image2 || ""}
+                  alt={project.title}
+                  width={1200}
+                  height={675}
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Project Content */}
@@ -74,28 +89,18 @@ export default function ProjectClient({ project }: ProjectClientProps) {
             <p className="text-xl leading-relaxed">{project.content.problem}</p>
           </div>
 
-          {project.imageGrid?.image2 && project.imageGrid?.image3 && (
-            <div className="flex flex-col md:flex-row gap-4 mb-8">
-              <div className="md:w-1/2">
-                <Image
-                  src={project.imageGrid?.image2 || ""}
-                  alt={project.title}
-                  width={1200}
-                  height={675}
-                  className="w-full h-auto"
-                />
-              </div>
-              <div className="md:w-1/2">
-                <Image
-                  src={project.imageGrid?.image3 || ""}
-                  alt={project.title}
-                  width={1200}
-                  height={675}
-                  className="w-full h-auto"
-                />
-              </div>
+          {project.n8nImage && (
+            <div className="w-full mb-8">
+              <Image
+                src={project.n8nImage}
+                alt={project.title}
+                width={1200}
+                height={675}
+                className="w-full h-auto"
+              />
             </div>
           )}
+
           <div>
             <h2 className="text-primary text-2xl font-archivo-black mb-6 uppercase">
               Solution
@@ -118,25 +123,6 @@ export default function ProjectClient({ project }: ProjectClientProps) {
             </div>
           </div>
 
-          {project.imageGrid?.image4 && (
-            <Image
-              src="/assets/claudipedia-4.png"
-              alt={project.title}
-              width={1200}
-              height={675}
-              className="w-full h-auto hidden md:block"
-            />
-          )}
-          {project.imageGrid?.image5 && (
-            <Image
-              src="/assets/claudipedia-5.png"
-              alt={project.title}
-              width={1200}
-              height={675}
-              className="w-full h-auto block md:hidden"
-            />
-          )}
-
           <div>
             <h2 className="text-primary text-2xl font-archivo-black mb-6 uppercase">
               Reflection
@@ -146,31 +132,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
             </p>
           </div>
 
-          {/* Action Buttons */}
-          {project.content.links && (
-            <div className="flex gap-4 pt-8 border-t border-primary">
-              {project.content.links.demo && (
-                <a
-                  href={project.content.links.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-primary text-light px-6 py-3 font-archivo-black uppercase hover:bg-opacity-90 transition-all"
-                >
-                  Live Demo
-                </a>
-              )}
-              {project.content.links.github && (
-                <a
-                  href={project.content.links.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="border-2 border-primary text-primary px-6 py-3 font-archivo-black uppercase hover:bg-primary hover:text-light transition-all"
-                >
-                  View Code
-                </a>
-              )}
-            </div>
-          )}
+          <GithubButton link={project.github} />
         </div>
       </div>
     </div>

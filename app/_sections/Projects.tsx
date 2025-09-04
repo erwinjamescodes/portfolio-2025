@@ -11,7 +11,7 @@ const Projects = () => {
           Featured Projects
         </h2>
 
-        <div className="space-y-8 sm:space-y-12">
+        <div className="space-y-16">
           {projects.map((project) => (
             <div key={project.id}>
               <ProjectOverview project={project} />
