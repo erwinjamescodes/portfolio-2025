@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { projects } from "../lib/projects";
-import ProjectOverview from "../_sections/ProjectOverview";
+import ProjectOverview from "../_components/ProjectOverview";
 
 export default function ProjectsPage() {
   return (

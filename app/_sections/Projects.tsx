@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { projects } from "../lib/projects";
-import ProjectOverview from "./ProjectOverview";
+import ProjectOverview from "../_components/ProjectOverview";
 
 const Projects = () => {
   return (

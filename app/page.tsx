@@ -1,5 +1,5 @@
 import Hero from "./_sections/Hero";
-import Marquee from "./_sections/Marquee";
+import Marquee from "./_components/Marquee";
 import Skills from "./_sections/Skills";
 import Projects from "./_sections/Projects";
 import About from "./_sections/About";

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Project } from "../lib/projects";
-import GithubButton from "../_components/github";
+import GithubButton from "./github";
 
 interface ProjectOverviewProps {
   project: Project;
