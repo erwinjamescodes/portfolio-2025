@@ -6,7 +6,7 @@ const Skills = () => {
     {
       title: "Full-Stack Development",
       description:
-        "I specialize in building modern web applications using Next.js, React, TypeScript, and Node.js with 4 years of production experience. As an AWS Certified Solutions Architect Associate, I am proficient in cloud technologies and database solutions like PostgreSQL and Supabase. I also enjoy creating responsive UIs with Tailwind CSS and Shadcn UI.",
+        "I specialize in building modern web applications using Next.js, React, TypeScript, Node.js, and Python with 4 years of production experience. As an AWS Certified Solutions Architect Associate, I am proficient in cloud technologies and database solutions like PostgreSQL and Supabase. I also enjoy creating responsive UIs with Tailwind CSS and Shadcn UI.",
       skills: [
         "Next.js",
         "React",
