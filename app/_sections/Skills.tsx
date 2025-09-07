@@ -37,16 +37,19 @@ const Skills = () => {
               Node.js
             </span>
             <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
+              Python
+            </span>
+            <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               Supabase
             </span>
             <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
               AWS
             </span>
             <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
-              Tailwind CSS
+              PostgreSQL
             </span>
             <span className="border border-primary text-primary px-3 py-1 text-sm font-medium">
-              PostgreSQL
+              FastAPI
             </span>
           </div>
         </div>
