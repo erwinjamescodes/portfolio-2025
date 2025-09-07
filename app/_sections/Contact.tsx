@@ -74,8 +74,7 @@ const Contact = () => {
       </h2>
 
       <p className="text-primary text-base sm:text-xl font-roboto mb-8 sm:mb-16 max-w-4xl">
-        Ready to talk about your next project? Let&apos;s discuss how I can help
-        bring your ideas to life
+        Let&apos;s discuss how I can help bring your ideas to life
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-4">
